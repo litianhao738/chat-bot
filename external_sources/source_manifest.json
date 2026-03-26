@@ -1,0 +1,225 @@
+{
+  "hk_official": {
+    "source_name": "Companies Registry",
+    "website": "https://www.cr.gov.hk",
+    "jurisdiction": "hong_kong",
+    "trust_tier": "official",
+    "pages": [
+      {
+        "page_id": "cr-home",
+        "url": "https://www.cr.gov.hk/en/home/index.htm",
+        "topic_id": 100,
+        "topic_label": "hong kong / incorporation / official guidance",
+        "business_stage": "overview",
+        "category": "official_overview",
+        "aliases": ["companies registry", "cr home", "hong kong company registry"]
+      },
+      {
+        "page_id": "register-company",
+        "url": "https://www.cr.gov.hk/en/services/register-company.htm",
+        "topic_id": 101,
+        "topic_label": "hong kong / incorporation / registration",
+        "business_stage": "incorporation",
+        "category": "register_company",
+        "aliases": ["register company", "incorporate local company", "start a company in hong kong"]
+      },
+      {
+        "page_id": "obtain-company-info",
+        "url": "https://www.cr.gov.hk/en/services/obtain-company-info.htm",
+        "topic_id": 102,
+        "topic_label": "hong kong / company information / search",
+        "business_stage": "company_search",
+        "category": "company_information",
+        "aliases": ["public search", "company information", "company records", "company search"]
+      },
+      {
+        "page_id": "change-company-name",
+        "url": "https://www.cr.gov.hk/en/services/change-company-name.htm",
+        "topic_id": 103,
+        "topic_label": "hong kong / company maintenance / naming",
+        "business_stage": "company_maintenance",
+        "category": "change_company_name",
+        "aliases": ["change company name", "company naming", "rename company"]
+      },
+      {
+        "page_id": "deregister-company",
+        "url": "https://www.cr.gov.hk/en/services/deregister-company.htm",
+        "topic_id": 104,
+        "topic_label": "hong kong / company maintenance / deregistration",
+        "business_stage": "company_maintenance",
+        "category": "deregister_company",
+        "aliases": ["deregister company", "close company", "defunct solvent company"]
+      },
+      {
+        "page_id": "electronic-services",
+        "url": "https://www.cr.gov.hk/en/electronic/e-servicesportal/electronic-services.htm",
+        "topic_id": 105,
+        "topic_label": "hong kong / e-services / filing",
+        "business_stage": "digital_services",
+        "category": "electronic_services",
+        "aliases": ["e-services portal", "electronic services", "online filing"]
+      },
+      {
+        "page_id": "e-services-faq",
+        "url": "https://www.cr.gov.hk/en/electronic/e-servicesportal/faq.htm",
+        "topic_id": 105,
+        "topic_label": "hong kong / e-services / filing",
+        "business_stage": "digital_services",
+        "category": "faq",
+        "aliases": ["e-services faq", "online filing faq", "electronic services faq"]
+      },
+      {
+        "page_id": "local-company-incorporation-faq",
+        "url": "https://www.cr.gov.hk/en/faq/local-company/incorporation.htm",
+        "topic_id": 101,
+        "topic_label": "hong kong / incorporation / registration",
+        "business_stage": "incorporation",
+        "category": "faq",
+        "aliases": ["local limited companies incorporation", "incorporation faq", "local company faq"]
+      },
+      {
+        "page_id": "miscellaneous-faq",
+        "url": "https://www.cr.gov.hk/en/faq/miscellaneous.htm",
+        "topic_id": 106,
+        "topic_label": "hong kong / business registration / miscellaneous",
+        "business_stage": "business_registration",
+        "category": "faq",
+        "aliases": ["business registration faq", "miscellaneous faq", "business registration and miscellaneous"]
+      },
+      {
+        "page_id": "annual-return-private-company",
+        "url": "https://www.cr.gov.hk/en/compliance/annual-return/private-company.htm",
+        "topic_id": 107,
+        "topic_label": "hong kong / compliance / annual return",
+        "business_stage": "compliance",
+        "category": "annual_return",
+        "aliases": ["annual return", "private company compliance", "annual filing"]
+      }
+    ]
+  },
+  "business_guide": {
+    "source_family": "business_guide",
+    "default_jurisdiction": "global",
+    "pages": [
+      {
+        "page_id": "netsuite-retail-supply-chain",
+        "source_name": "NetSuite",
+        "website": "https://www.netsuite.com",
+        "url": "https://www.netsuite.com/portal/resource/articles/erp/retail-supply-chain-management.shtml",
+        "topic_id": 200,
+        "topic_label": "retail / supply chain / operations",
+        "business_stage": "operations",
+        "category": "supply_chain_guide",
+        "trust_tier": "vendor_editorial",
+        "aliases": [
+          "retail supply chain",
+          "supply chain operations",
+          "inventory and logistics",
+          "retail operations guide"
+        ],
+        "start_markers": [
+          "Retail Supply Chain Management Guide: Importance & Strategies",
+          "Retail Supply Chain Management Guide"
+        ],
+        "end_markers": [
+          "Everything You Need in One Place, in Real Time",
+          "In This Article"
+        ],
+        "fallback_title": "Retail Supply Chain Management Guide",
+        "fallback_summary": "Retail supply chain management covers the operational flow from forecasting demand and sourcing materials to managing inventory, warehousing, fulfillment, and delivery. The guide emphasizes that retailers need accurate demand planning, stronger supplier coordination, and better inventory visibility so they can deliver the right products in the right quantities at the right time. It also highlights how stockouts, shipping volatility, labor shortages, and changing customer behavior can raise costs and hurt service quality if operations are not agile. A practical lesson for new retail businesses is to treat supply chain design as an early operating priority rather than a back-office task. Processes for replenishment, warehouse handling, fulfillment speed, and exception management directly affect margin, customer satisfaction, and the ability to scale.",
+        "seed_keywords": [
+          "retail supply chain",
+          "operations",
+          "inventory",
+          "forecasting",
+          "sourcing",
+          "fulfillment",
+          "warehouse",
+          "delivery",
+          "agility",
+          "customer expectations"
+        ]
+      },
+      {
+        "page_id": "businessnewsdaily-open-retail-store",
+        "source_name": "Business News Daily",
+        "website": "https://www.businessnewsdaily.com",
+        "url": "https://www.businessnewsdaily.com/15169-how-to-open-a-retail-store.html",
+        "topic_id": 201,
+        "topic_label": "retail / store launch / small business guide",
+        "business_stage": "launch",
+        "category": "retail_store_guide",
+        "trust_tier": "editorial",
+        "aliases": [
+          "open a retail store",
+          "start a retail business",
+          "brick and mortar store",
+          "retail launch guide"
+        ],
+        "start_markers": [
+          "How to Open a Retail Store",
+          "12 Tips for Opening a Retail Store"
+        ],
+        "end_markers": [
+          "Why trust our editorial process",
+          "Recommended",
+          "Our methodology"
+        ],
+        "fallback_title": "How to Open a Retail Store",
+        "fallback_summary": "This guide frames retail launch as a step-by-step process: define the store concept, identify the target customer, decide how pricing and positioning will compete, cover legal basics, and build a realistic financial plan. It also stresses store location, pop-up testing, vendor relationships, staffing, software, and marketing. For entrepreneurship education, it is especially useful for questions about target customers, competition, pricing, operations, and go-to-market planning in a physical retail setting. The article also connects planning choices to execution details such as point-of-sale software, inventory practices, and customer experience design.",
+        "seed_keywords": [
+          "retail store",
+          "target customer",
+          "competition",
+          "pricing",
+          "location",
+          "vendor relationships",
+          "staffing",
+          "point of sale",
+          "marketing",
+          "customer experience"
+        ]
+      },
+      {
+        "page_id": "forbesadvisor-start-business",
+        "source_name": "Forbes Advisor",
+        "website": "https://www.forbes.com",
+        "url": "https://www.forbes.com/advisor/business/how-to-start-a-business/",
+        "topic_id": 202,
+        "topic_label": "business startup / planning / launch",
+        "business_stage": "planning",
+        "category": "startup_guide",
+        "trust_tier": "editorial",
+        "aliases": [
+          "how to start a business",
+          "start a small business",
+          "business launch guide",
+          "startup planning guide"
+        ],
+        "start_markers": [
+          "How to Start a Business",
+          "How to Start a Business - Forbes Advisor"
+        ],
+        "end_markers": [
+          "Featured Partners",
+          "Frequently Asked Questions",
+          "Was this article helpful"
+        ],
+        "fallback_title": "How to Start a Business",
+        "fallback_summary": "This guide organizes business creation into stages such as research and planning, securing funding, registering the business, launching operations, and establishing long-term value. It emphasizes early market research, competitor analysis, business-plan writing, funding choices, registration, permits, bank accounts, bookkeeping, insurance, and operational setup before launch. The guide is useful for general entrepreneurship questions that are broader than a single startup case, especially when the user wants practical starting steps rather than company examples. It also highlights that launch is only one stage; founders need to keep refining their target market, finances, operations, and profitability after the initial start.",
+        "seed_keywords": [
+          "start a business",
+          "business plan",
+          "market research",
+          "funding",
+          "register business",
+          "licenses",
+          "bank account",
+          "bookkeeping",
+          "insurance",
+          "profitability"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "source_family": "hk_official",
+  "source_name": "Companies Registry",
+  "website": "https://www.cr.gov.hk",
+  "jurisdiction": "hong_kong",
+  "trust_tier": "official",
+  "page_count": 10,
+  "chunk_count": 54,
+  "pages": [
+    {
+      "company_id": "hk-cr-home",
+      "title": "Companies Registry",
+      "url": "https://www.cr.gov.hk/en/home/index.htm",
+      "topic_label": "hong kong / incorporation / official guidance",
+      "business_stage": "overview"
+    },
+    {
+      "company_id": "hk-register-company",
+      "title": "How to register a new company?",
+      "url": "https://www.cr.gov.hk/en/services/register-company.htm",
+      "topic_label": "hong kong / incorporation / registration",
+      "business_stage": "incorporation"
+    },
+    {
+      "company_id": "hk-obtain-company-info",
+      "title": "How to obtain company information?",
+      "url": "https://www.cr.gov.hk/en/services/obtain-company-info.htm",
+      "topic_label": "hong kong / company information / search",
+      "business_stage": "company_search"
+    },
+    {
+      "company_id": "hk-change-company-name",
+      "title": "How to change a company name?",
+      "url": "https://www.cr.gov.hk/en/services/change-company-name.htm",
+      "topic_label": "hong kong / company maintenance / naming",
+      "business_stage": "company_maintenance"
+    },
+    {
+      "company_id": "hk-deregister-company",
+      "title": "How to deregister a defunct solvent company?",
+      "url": "https://www.cr.gov.hk/en/services/deregister-company.htm",
+      "topic_label": "hong kong / company maintenance / deregistration",
+      "business_stage": "company_maintenance"
+    },
+    {
+      "company_id": "hk-electronic-services",
+      "title": "Electronic Services at the e-Services Portal",
+      "url": "https://www.cr.gov.hk/en/electronic/e-servicesportal/electronic-services.htm",
+      "topic_label": "hong kong / e-services / filing",
+      "business_stage": "digital_services"
+    },
+    {
+      "company_id": "hk-e-services-faq",
+      "title": "e-Services",
+      "url": "https://www.cr.gov.hk/en/electronic/e-servicesportal/faq.htm",
+      "topic_label": "hong kong / e-services / filing",
+      "business_stage": "digital_services"
+    },
+    {
+      "company_id": "hk-local-company-incorporation-faq",
+      "title": "Incorporation",
+      "url": "https://www.cr.gov.hk/en/faq/local-company/incorporation.htm",
+      "topic_label": "hong kong / incorporation / registration",
+      "business_stage": "incorporation"
+    },
+    {
+      "company_id": "hk-miscellaneous-faq",
+      "title": "Business Registration & Miscellaneous",
+      "url": "https://www.cr.gov.hk/en/faq/miscellaneous.htm",
+      "topic_label": "hong kong / business registration / miscellaneous",
+      "business_stage": "business_registration"
+    },
+    {
+      "company_id": "hk-annual-return-private-company",
+      "title": "Local Private Company",
+      "url": "https://www.cr.gov.hk/en/compliance/annual-return/private-company.htm",
+      "topic_label": "hong kong / compliance / annual return",
+      "business_stage": "compliance"
+    }
+  ]
+}

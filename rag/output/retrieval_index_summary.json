@@ -1,0 +1,24 @@
+{
+  "kb_path": "project8_kb/knowledge_base_chunks.jsonl",
+  "company_kb_path": "project8_kb/cleaned_company_kb.jsonl",
+  "extra_kb_paths": [
+    "external_sources/processed/hk_official_kb_chunks.jsonl",
+    "external_sources/processed/business_guide_kb_chunks.jsonl"
+  ],
+  "extra_company_kb_paths": [
+    "external_sources/processed/hk_official_kb.jsonl",
+    "external_sources/processed/business_guide_kb.jsonl"
+  ],
+  "n_docs": 5572,
+  "n_topics": 31,
+  "low_info_count": 112,
+  "source_family_counts": {
+    "yc": 5494,
+    "hk_official": 54,
+    "business_guide": 24
+  },
+  "output_files": {
+    "index_path": "rag/output\\retrieval_index.pkl",
+    "summary_path": "rag/output\\retrieval_index_summary.json"
+  }
+}

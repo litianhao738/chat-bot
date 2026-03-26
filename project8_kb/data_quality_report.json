@@ -1,0 +1,427 @@
+{
+  "source_path": "yc_detailed_data.repaired.v2.jsonl",
+  "kb_path": "project8_kb\\cleaned_company_kb.jsonl",
+  "source_summary": {
+    "total_records": 5494,
+    "unique_urls": 5494,
+    "duplicate_urls": 0,
+    "batch_na": 5122,
+    "location_na": 5122,
+    "team_size_na": 5139,
+    "founders_empty": 5127,
+    "description_empty": 50,
+    "website_empty": 0
+  },
+  "kb_summary": {
+    "total_records": 5494,
+    "unique_company_ids": 5494,
+    "duplicate_company_ids": 0,
+    "unique_canonical_names": 5418,
+    "duplicate_canonical_names": 76,
+    "empty_clean_text": 0,
+    "empty_keywords": 47,
+    "empty_topic_labels": 0,
+    "raw_weird_name_records": 238,
+    "canonical_weird_name_records": 0,
+    "avg_keywords_per_record": 10.99,
+    "min_keywords_per_record": 0,
+    "max_keywords_per_record": 12,
+    "avg_clean_text_words": 83.14,
+    "min_clean_text_words": 1,
+    "max_clean_text_words": 2362
+  },
+  "topic_distribution": {
+    "most_common": [
+      {
+        "topic_label": "insurance / security / home",
+        "count": 1204
+      },
+      {
+        "topic_label": "search / web / engineering",
+        "count": 766
+      },
+      {
+        "topic_label": "energy / space / cost",
+        "count": 421
+      },
+      {
+        "topic_label": "marketplace / brands / commerce",
+        "count": 359
+      },
+      {
+        "topic_label": "social / games / game",
+        "count": 276
+      }
+    ],
+    "least_common": [
+      {
+        "topic_label": "send / emails / sms",
+        "count": 86
+      },
+      {
+        "topic_label": "students / learning / education",
+        "count": 123
+      },
+      {
+        "topic_label": "food / restaurants / delivery",
+        "count": 125
+      },
+      {
+        "topic_label": "engineering / engineers / protein",
+        "count": 127
+      },
+      {
+        "topic_label": "videos / audio / models",
+        "count": 137
+      }
+    ]
+  },
+  "repair_stats": {
+    "repaired_from_slug_count": 4031,
+    "sample": [
+      {
+        "company_id": "sre-ai",
+        "raw_company_name": "The Problem",
+        "raw_one_liner": "Raj Kadiyala",
+        "canonical_name": "Sre Ai"
+      },
+      {
+        "company_id": "opsolutely",
+        "raw_company_name": "Opsolutely: Automated deployments for software teams.",
+        "raw_one_liner": "Opsolutely",
+        "canonical_name": "Opsolutely"
+      },
+      {
+        "company_id": "topological",
+        "raw_company_name": "Topological: Physics-based foundation models for CAD optimization.",
+        "raw_one_liner": "Nicole Ma",
+        "canonical_name": "Topological"
+      },
+      {
+        "company_id": "finic",
+        "raw_company_name": "Finic: Detect and investigate financial crimes with AI",
+        "raw_one_liner": "Jason Fan",
+        "canonical_name": "Finic"
+      },
+      {
+        "company_id": "gem",
+        "raw_company_name": "Gem: Talent engagement platform",
+        "raw_one_liner": "Steven Bartel",
+        "canonical_name": "Gem"
+      },
+      {
+        "company_id": "mystro",
+        "raw_company_name": "Mystro: Mystro is an app that makes rideshare drivers up to 30% more money by…",
+        "raw_one_liner": "Mystro",
+        "canonical_name": "Mystro"
+      },
+      {
+        "company_id": "shape",
+        "raw_company_name": "Shape: Get data insights without writing SQL",
+        "raw_one_liner": "Namit Chadha",
+        "canonical_name": "Shape"
+      },
+      {
+        "company_id": "apozy",
+        "raw_company_name": "Apozy: Apozy makes every website safe to browse",
+        "raw_one_liner": "Apozy",
+        "canonical_name": "Apozy"
+      },
+      {
+        "company_id": "tradewind-bioscience",
+        "raw_company_name": "Tradewind BioScience: Tradewind translates scientific insight into innovative ways of…",
+        "raw_one_liner": "Thaddeus Allen",
+        "canonical_name": "Tradewind Bioscience"
+      },
+      {
+        "company_id": "sunu",
+        "raw_company_name": "Sunu: Audio and Haptics AR interface equipping blind users with super powers",
+        "raw_one_liner": "Marco Trujillo",
+        "canonical_name": "Sunu"
+      }
+    ]
+  },
+  "samples": {
+    "canonical_weird_names": [],
+    "raw_weird_names": [
+      {
+        "company_id": "sre-ai",
+        "canonical_name": "Sre Ai",
+        "raw_company_name": "The Problem",
+        "raw_one_liner": "Raj Kadiyala",
+        "canonical_tagline": "Reliability on autopilot. Free you team to build what's next."
+      },
+      {
+        "company_id": "arva-ai",
+        "canonical_name": "Arva Ai",
+        "raw_company_name": "✨ TL;DR",
+        "raw_one_liner": "Rhim Shah",
+        "canonical_tagline": "Banks and fintechs have large teams of human analysts who conduct manual checks and reviews. We replace those human compliance analysts with AI agents that automate 80% of the manual work for faster and more compliant financial crime (AML) reviews. Our first three products are: Screening AI (discount 91% of screening alerts), KYB/C AI (speed up onboarding), Transaction Monitoring AI (handle AML transaction monitoring alerts) Our end goal is to have a whole suite of AI workers that can handle manual compliance work for banks and fintechs. A $24B opportunity in the US alone."
+      },
+      {
+        "company_id": "cloudthread",
+        "canonical_name": "Cloudthread",
+        "raw_company_name": "TL;DR",
+        "raw_one_liner": "Ilia Semenov",
+        "canonical_tagline": "Cloudthread is an analytics platform that helps engineering teams build cost efficiently in the cloud. We were behind Lyft's internal cloud cost management system and now we use that deep expertise to help organizations save hours of engineering time, reduce cloud bills, and prevent costly re-architectures."
+      },
+      {
+        "company_id": "tailor",
+        "canonical_name": "Tailor",
+        "raw_company_name": "TL;DR",
+        "raw_one_liner": "Yo Shibata",
+        "canonical_tagline": "Tailor is the headless ERP that gives fast-growing retail brands a composable, API-first platform to run operations with speed, flexibility, and control. 🧱 Legacy ERP is too rigid: Systems like NetSuite and SAP take months (or years) to implement and break with every change. Tailor is modular, headless, and easy to adapt. 🧩 Point solutions don’t scale: Tools like inventory or order management software solve one problem, but can’t talk to each other or keep up with growth. 📊 Spreadsheets are everywhere: From demand planning to purchase orders, even $100M+ brands still rely on Excel. Tailor replaces duct-taped workflows with ops modules you can tweak, combine, or scale ⚡️ Complex workflows need custom logic: Whether it's multi-location inventory, DTC + B2B orders, or light manufacturing (like kitting or lot tracking), Tailor supports flexible automations out of the box. 👟 Operators can move faster: Launch backend modules in minutes, not months. Tailor's low-code tools let teams build, automate, and adapt without waiting on engineering or implementation agencies. Built for composable retail: - Headless backend with GraphQL APIs - 50+ integrations (Shopify, QuickBooks, 3PLs, etc.) - Custom automations via Pipelines, Functions, and Event Triggers - State machines for approvals and multi-step workflows - AI features like OCR and vector search built in Tailor is already powering operations at fast-growing omnichannel brands and modern manufacturers. We’re proud to be the first Japan-based company to join Y Combinator. Learn more at [tailor.tech](https://www.tailor.tech)"
+      },
+      {
+        "company_id": "pointhound",
+        "canonical_name": "Pointhound",
+        "raw_company_name": "TL;DR",
+        "raw_one_liner": "Jay Reno",
+        "canonical_tagline": "Pointhound makes it easy to earn and redeem your credit card points for free flights. We're driven by our mission to make the world more accessible through travel."
+      },
+      {
+        "company_id": "certainly-health",
+        "canonical_name": "Certainly Health",
+        "raw_company_name": "TL;DR",
+        "raw_one_liner": "Kevin Chiu",
+        "canonical_tagline": "Patients enter their insurance and visit reason, and we use machine learning to predict and guarantee their out-of-pocket costs for every health provider. For health providers, we ensure their patients always pay the bill."
+      },
+      {
+        "company_id": "rubbrband",
+        "canonical_name": "Rubbrband",
+        "raw_company_name": "What is Rubbrband?",
+        "raw_one_liner": "Jeremy Lee",
+        "canonical_tagline": "Rubbrband creates world-class video ads and stories with AI and human creativity. We work with companies from seed to growth, see our work at rubbrband.com."
+      },
+      {
+        "company_id": "stratify",
+        "canonical_name": "Stratify",
+        "raw_company_name": "TL;DR",
+        "raw_one_liner": "Siddhartha Javvaji",
+        "canonical_tagline": "Stratify is the AI-powered user researcher that discovers the why behind every decision, click, and preference. Our platform uses agentic workflows that instantly recruit participants, conduct user interviews, analyze responses, and provide actionable insights."
+      },
+      {
+        "company_id": "fazeshift",
+        "canonical_name": "Fazeshift",
+        "raw_company_name": "🤯 The Problem: Invoicing is very manual",
+        "raw_one_liner": "Caitlin Leksana",
+        "canonical_tagline": "Fazeshift is an AI agent for automating Accounts Receivable. What used to take teams of people and hours of manual work can now be fully automated with Fazeshift. Caitlin and Timmy met while getting their MBA at Harvard. After graduating, they started a B2B marketing software startup, which is where they first experienced the pain of this process. The problem stems from fragmented data across software platforms like QuickBooks, Stripe, NetSuite, DocuSign, HubSpot, and Salesforce. Fazeshift’s infrastructure connects the data across these software platforms and uses LLMs to automate the previously manual workflow."
+      },
+      {
+        "company_id": "issen",
+        "canonical_name": "Issen",
+        "raw_company_name": "TL;DR",
+        "raw_one_liner": "Mariano Sorgente",
+        "canonical_tagline": "ISSEN is an AI conversational language app that helps you become fluent. Your on-demand voice tutor is personal to you, adapting lessons and chats to your particular interests, learning style, and goals. Our mission is to transform language learning by offering a level of connection, effectiveness and fun that, until now, only human teachers could provide."
+      }
+    ],
+    "zero_keyword_records": [
+      {
+        "company_id": "saldor",
+        "canonical_name": "Saldor",
+        "raw_company_name": "Saldor:",
+        "raw_one_liner": "Jacob Bland",
+        "description": "",
+        "clean_text": "saldor",
+        "topic_label": "insurance / security / home"
+      },
+      {
+        "company_id": "snapboard",
+        "canonical_name": "Snapboard",
+        "raw_company_name": "Snapboard:",
+        "raw_one_liner": "Calum Moore",
+        "description": "",
+        "clean_text": "snapboard",
+        "topic_label": "insurance / security / home"
+      },
+      {
+        "company_id": "satchel",
+        "canonical_name": "Satchel",
+        "raw_company_name": "Satchel:",
+        "raw_one_liner": "Satchel",
+        "description": "",
+        "clean_text": "satchel",
+        "topic_label": "insurance / security / home"
+      },
+      {
+        "company_id": "fithub",
+        "canonical_name": "Fithub",
+        "raw_company_name": "Fithub:",
+        "raw_one_liner": "Fithub",
+        "description": "",
+        "clean_text": "fithub",
+        "topic_label": "insurance / security / home"
+      },
+      {
+        "company_id": "therecraft",
+        "canonical_name": "ThereCraft",
+        "raw_company_name": "ThereCraft:",
+        "raw_one_liner": "ThereCraft",
+        "description": "",
+        "clean_text": "therecraft",
+        "topic_label": "insurance / security / home"
+      },
+      {
+        "company_id": "laguna",
+        "canonical_name": "Laguna",
+        "raw_company_name": "Laguna:",
+        "raw_one_liner": "Laguna",
+        "description": "",
+        "clean_text": "laguna",
+        "topic_label": "insurance / security / home"
+      },
+      {
+        "company_id": "stackq",
+        "canonical_name": "Stackq",
+        "raw_company_name": "Stackq:",
+        "raw_one_liner": "Stackq",
+        "description": "",
+        "clean_text": "stackq",
+        "topic_label": "insurance / security / home"
+      },
+      {
+        "company_id": "pesto",
+        "canonical_name": "Pesto",
+        "raw_company_name": "Pesto:",
+        "raw_one_liner": "Pesto",
+        "description": "",
+        "clean_text": "pesto",
+        "topic_label": "insurance / security / home"
+      },
+      {
+        "company_id": "lifelike",
+        "canonical_name": "Lifelike",
+        "raw_company_name": "Lifelike:",
+        "raw_one_liner": "Alec Xiang",
+        "description": "",
+        "clean_text": "lifelike",
+        "topic_label": "insurance / security / home"
+      },
+      {
+        "company_id": "excepgen",
+        "canonical_name": "Excepgen",
+        "raw_company_name": "Excepgen:",
+        "raw_one_liner": "Excepgen",
+        "description": "",
+        "clean_text": "excepgen",
+        "topic_label": "insurance / security / home"
+      }
+    ],
+    "duplicate_canonical_names": [
+      {
+        "canonical_name": "Atlas",
+        "count": 4,
+        "company_ids": [
+          "atlaswork",
+          "atlas-2",
+          "atlas-3",
+          "atlas"
+        ]
+      },
+      {
+        "canonical_name": "Apollo",
+        "count": 3,
+        "company_ids": [
+          "apollo",
+          "apollo-2",
+          "apollo-3"
+        ]
+      },
+      {
+        "canonical_name": "Eden",
+        "count": 3,
+        "company_ids": [
+          "tryeden",
+          "eden-2",
+          "eden"
+        ]
+      },
+      {
+        "canonical_name": "Team",
+        "count": 3,
+        "company_ids": [
+          "kopra-bio",
+          "biocartesian",
+          "granza-bio"
+        ]
+      },
+      {
+        "canonical_name": "Scout",
+        "count": 3,
+        "company_ids": [
+          "scout-2",
+          "scout",
+          "cpgscout"
+        ]
+      },
+      {
+        "canonical_name": "Weave",
+        "count": 3,
+        "company_ids": [
+          "weave-3",
+          "weave",
+          "weave-2"
+        ]
+      },
+      {
+        "canonical_name": "Remix",
+        "count": 2,
+        "company_ids": [
+          "remix",
+          "resonate"
+        ]
+      },
+      {
+        "canonical_name": "TL/DR",
+        "count": 2,
+        "company_ids": [
+          "rovi-health",
+          "newton"
+        ]
+      },
+      {
+        "canonical_name": "Pigeon",
+        "count": 2,
+        "company_ids": [
+          "pigeon",
+          "pigeon-2"
+        ]
+      },
+      {
+        "canonical_name": "Dialect",
+        "count": 2,
+        "company_ids": [
+          "dialect",
+          "dialect-2"
+        ]
+      }
+    ]
+  },
+  "findings": [
+    {
+      "severity": "high",
+      "title": "Source records are missing several structured fields",
+      "details": "batch, location, team_size, and founders are effectively empty across the entire source dataset."
+    },
+    {
+      "severity": "medium",
+      "title": "Raw source names still contain placeholder or noisy text",
+      "details": "The original scraped fields still include values such as TL;DR, The Problem, and marketing-style titles."
+    },
+    {
+      "severity": "medium",
+      "title": "Some records have no extracted keywords",
+      "details": "These rows usually have empty descriptions or very short source text, which weakens retrieval quality."
+    },
+    {
+      "severity": "medium",
+      "title": "Canonical name collisions remain",
+      "details": "Multiple different companies share the same cleaned canonical_name, which can confuse reporting and chatbot retrieval."
+    },
+    {
+      "severity": "low",
+      "title": "Topic distribution is uneven",
+      "details": "A few topic clusters are much larger than others, suggesting the 20-cluster taxonomy is coarse for some business areas."
+    }
+  ]
+}

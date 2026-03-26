@@ -1,0 +1,638 @@
+{
+  "dataset_path": "D:\\yc-draft-main\\sentiment_assets\\input\\sentimentdataset.csv",
+  "row_count": 732,
+  "dataset_sentiment_distribution": {
+    "Positive": 46,
+    "Negative": 4,
+    "Neutral": 682
+  },
+  "top_platforms": [
+    {
+      "value": "Instagram",
+      "count": 258
+    },
+    {
+      "value": "Twitter",
+      "count": 243
+    },
+    {
+      "value": "Facebook",
+      "count": 231
+    }
+  ],
+  "top_countries": [
+    {
+      "value": "USA",
+      "count": 188
+    },
+    {
+      "value": "UK",
+      "count": 143
+    },
+    {
+      "value": "Canada",
+      "count": 135
+    },
+    {
+      "value": "Australia",
+      "count": 75
+    },
+    {
+      "value": "India",
+      "count": 70
+    },
+    {
+      "value": "Brazil",
+      "count": 17
+    },
+    {
+      "value": "France",
+      "count": 16
+    },
+    {
+      "value": "Japan",
+      "count": 15
+    },
+    {
+      "value": "Germany",
+      "count": 14
+    },
+    {
+      "value": "Italy",
+      "count": 11
+    }
+  ],
+  "vader_agreement_rate": 0.1284,
+  "sample_rows": [
+    {
+      "row_id": 0,
+      "text": "Enjoying a beautiful day at the park!",
+      "clean_text": "enjoying a beautiful day at the park",
+      "dataset_sentiment": "Positive",
+      "vader_sentiment": "Positive",
+      "vader_compound": 0.8074,
+      "vader_scores": {
+        "neg": 0.0,
+        "neu": 0.407,
+        "pos": 0.593,
+        "compound": 0.8074
+      },
+      "timestamp": "2023-01-15 12:30:00",
+      "user": "User123",
+      "platform": "Twitter",
+      "hashtags": [
+        "nature",
+        "park"
+      ],
+      "country": "USA",
+      "retweets": 15.0,
+      "likes": 30.0,
+      "year": "2023",
+      "month": "1",
+      "day": "15",
+      "hour": "12"
+    },
+    {
+      "row_id": 1,
+      "text": "Traffic was terrible this morning.",
+      "clean_text": "traffic was terrible this morning",
+      "dataset_sentiment": "Negative",
+      "vader_sentiment": "Negative",
+      "vader_compound": -0.4767,
+      "vader_scores": {
+        "neg": 0.437,
+        "neu": 0.563,
+        "pos": 0.0,
+        "compound": -0.4767
+      },
+      "timestamp": "2023-01-15 08:45:00",
+      "user": "CommuterX",
+      "platform": "Twitter",
+      "hashtags": [
+        "traffic",
+        "morning"
+      ],
+      "country": "Canada",
+      "retweets": 5.0,
+      "likes": 10.0,
+      "year": "2023",
+      "month": "1",
+      "day": "15",
+      "hour": "8"
+    },
+    {
+      "row_id": 2,
+      "text": "Just finished an amazing workout! 💪",
+      "clean_text": "just finished an amazing workout",
+      "dataset_sentiment": "Positive",
+      "vader_sentiment": "Positive",
+      "vader_compound": 0.5859,
+      "vader_scores": {
+        "neg": 0.0,
+        "neu": 0.513,
+        "pos": 0.487,
+        "compound": 0.5859
+      },
+      "timestamp": "2023-01-15 15:45:00",
+      "user": "FitnessFan",
+      "platform": "Instagram",
+      "hashtags": [
+        "fitness",
+        "workout"
+      ],
+      "country": "USA",
+      "retweets": 20.0,
+      "likes": 40.0,
+      "year": "2023",
+      "month": "1",
+      "day": "15",
+      "hour": "15"
+    },
+    {
+      "row_id": 3,
+      "text": "Excited about the upcoming weekend getaway!",
+      "clean_text": "excited about the upcoming weekend getaway",
+      "dataset_sentiment": "Positive",
+      "vader_sentiment": "Positive",
+      "vader_compound": 0.34,
+      "vader_scores": {
+        "neg": 0.0,
+        "neu": 0.676,
+        "pos": 0.324,
+        "compound": 0.34
+      },
+      "timestamp": "2023-01-15 18:20:00",
+      "user": "AdventureX",
+      "platform": "Facebook",
+      "hashtags": [
+        "travel",
+        "adventure"
+      ],
+      "country": "UK",
+      "retweets": 8.0,
+      "likes": 15.0,
+      "year": "2023",
+      "month": "1",
+      "day": "15",
+      "hour": "18"
+    },
+    {
+      "row_id": 4,
+      "text": "Trying out a new recipe for dinner tonight.",
+      "clean_text": "trying out a new recipe for dinner tonight",
+      "dataset_sentiment": "Neutral",
+      "vader_sentiment": "Neutral",
+      "vader_compound": 0.0,
+      "vader_scores": {
+        "neg": 0.0,
+        "neu": 1.0,
+        "pos": 0.0,
+        "compound": 0.0
+      },
+      "timestamp": "2023-01-15 19:55:00",
+      "user": "ChefCook",
+      "platform": "Instagram",
+      "hashtags": [
+        "cooking",
+        "food"
+      ],
+      "country": "Australia",
+      "retweets": 12.0,
+      "likes": 25.0,
+      "year": "2023",
+      "month": "1",
+      "day": "15",
+      "hour": "19"
+    }
+  ],
+  "keyword_profile_preview": {
+    "top_keywords_by_sentiment": {
+      "Positive": [
+        {
+          "value": "new",
+          "count": 10
+        },
+        {
+          "value": "day",
+          "count": 4
+        },
+        {
+          "value": "weekend",
+          "count": 4
+        },
+        {
+          "value": "feeling",
+          "count": 4
+        },
+        {
+          "value": "enjoying",
+          "count": 3
+        },
+        {
+          "value": "about",
+          "count": 3
+        },
+        {
+          "value": "exploring",
+          "count": 3
+        },
+        {
+          "value": "reflecting",
+          "count": 3
+        },
+        {
+          "value": "good",
+          "count": 3
+        },
+        {
+          "value": "book",
+          "count": 3
+        },
+        {
+          "value": "attending",
+          "count": 3
+        },
+        {
+          "value": "park",
+          "count": 2
+        },
+        {
+          "value": "finished",
+          "count": 2
+        },
+        {
+          "value": "workout",
+          "count": 2
+        },
+        {
+          "value": "excited",
+          "count": 2
+        },
+        {
+          "value": "upcoming",
+          "count": 2
+        },
+        {
+          "value": "cozy",
+          "count": 2
+        },
+        {
+          "value": "movie",
+          "count": 2
+        },
+        {
+          "value": "release",
+          "count": 2
+        },
+        {
+          "value": "out",
+          "count": 2
+        }
+      ],
+      "Negative": [
+        {
+          "value": "feeling",
+          "count": 2
+        },
+        {
+          "value": "traffic",
+          "count": 1
+        },
+        {
+          "value": "terrible",
+          "count": 1
+        },
+        {
+          "value": "morning",
+          "count": 1
+        },
+        {
+          "value": "political",
+          "count": 1
+        },
+        {
+          "value": "discussions",
+          "count": 1
+        },
+        {
+          "value": "heating",
+          "count": 1
+        },
+        {
+          "value": "timeline",
+          "count": 1
+        },
+        {
+          "value": "bit",
+          "count": 1
+        },
+        {
+          "value": "under",
+          "count": 1
+        },
+        {
+          "value": "weather",
+          "count": 1
+        },
+        {
+          "value": "winter",
+          "count": 1
+        },
+        {
+          "value": "blues",
+          "count": 1
+        },
+        {
+          "value": "got",
+          "count": 1
+        },
+        {
+          "value": "low",
+          "count": 1
+        }
+      ],
+      "Neutral": [
+        {
+          "value": "through",
+          "count": 51
+        },
+        {
+          "value": "each",
+          "count": 39
+        },
+        {
+          "value": "new",
+          "count": 33
+        },
+        {
+          "value": "like",
+          "count": 27
+        },
+        {
+          "value": "dreams",
+          "count": 25
+        },
+        {
+          "value": "laughter",
+          "count": 24
+        },
+        {
+          "value": "into",
+          "count": 24
+        },
+        {
+          "value": "joy",
+          "count": 24
+        },
+        {
+          "value": "heart",
+          "count": 24
+        },
+        {
+          "value": "after",
+          "count": 23
+        },
+        {
+          "value": "night",
+          "count": 23
+        },
+        {
+          "value": "day",
+          "count": 22
+        },
+        {
+          "value": "life",
+          "count": 21
+        },
+        {
+          "value": "feeling",
+          "count": 20
+        },
+        {
+          "value": "world",
+          "count": 20
+        },
+        {
+          "value": "journey",
+          "count": 20
+        },
+        {
+          "value": "art",
+          "count": 20
+        },
+        {
+          "value": "beauty",
+          "count": 19
+        },
+        {
+          "value": "sky",
+          "count": 19
+        },
+        {
+          "value": "where",
+          "count": 19
+        }
+      ]
+    },
+    "top_hashtags_by_sentiment": {
+      "Positive": [
+        {
+          "value": "nature",
+          "count": 2
+        },
+        {
+          "value": "fitness",
+          "count": 2
+        },
+        {
+          "value": "reflection",
+          "count": 2
+        },
+        {
+          "value": "gaming",
+          "count": 2
+        },
+        {
+          "value": "reading",
+          "count": 2
+        },
+        {
+          "value": "virtualreality",
+          "count": 2
+        },
+        {
+          "value": "art",
+          "count": 2
+        },
+        {
+          "value": "cooking",
+          "count": 2
+        },
+        {
+          "value": "park",
+          "count": 1
+        },
+        {
+          "value": "workout",
+          "count": 1
+        },
+        {
+          "value": "travel",
+          "count": 1
+        },
+        {
+          "value": "adventure",
+          "count": 1
+        },
+        {
+          "value": "gratitude",
+          "count": 1
+        },
+        {
+          "value": "positivevibes",
+          "count": 1
+        },
+        {
+          "value": "rainydays",
+          "count": 1
+        }
+      ],
+      "Negative": [
+        {
+          "value": "traffic",
+          "count": 1
+        },
+        {
+          "value": "morning",
+          "count": 1
+        },
+        {
+          "value": "politics",
+          "count": 1
+        },
+        {
+          "value": "debate",
+          "count": 1
+        },
+        {
+          "value": "sickday",
+          "count": 1
+        },
+        {
+          "value": "health",
+          "count": 1
+        },
+        {
+          "value": "winterblues",
+          "count": 1
+        },
+        {
+          "value": "mood",
+          "count": 1
+        }
+      ],
+      "Neutral": [
+        {
+          "value": "serenity",
+          "count": 15
+        },
+        {
+          "value": "excitement",
+          "count": 13
+        },
+        {
+          "value": "gratitude",
+          "count": 12
+        },
+        {
+          "value": "despair",
+          "count": 11
+        },
+        {
+          "value": "nostalgia",
+          "count": 11
+        },
+        {
+          "value": "contentment",
+          "count": 10
+        },
+        {
+          "value": "curiosity",
+          "count": 10
+        },
+        {
+          "value": "awe",
+          "count": 9
+        },
+        {
+          "value": "grief",
+          "count": 9
+        },
+        {
+          "value": "loneliness",
+          "count": 9
+        },
+        {
+          "value": "hopeful",
+          "count": 9
+        },
+        {
+          "value": "joy",
+          "count": 8
+        },
+        {
+          "value": "acceptance",
+          "count": 8
+        },
+        {
+          "value": "confusion",
+          "count": 8
+        },
+        {
+          "value": "elation",
+          "count": 7
+        }
+      ]
+    },
+    "top_platforms_by_sentiment": {
+      "Positive": [
+        {
+          "value": "Instagram",
+          "count": 17
+        },
+        {
+          "value": "Facebook",
+          "count": 16
+        },
+        {
+          "value": "Twitter",
+          "count": 13
+        }
+      ],
+      "Negative": [
+        {
+          "value": "Twitter",
+          "count": 3
+        },
+        {
+          "value": "Instagram",
+          "count": 1
+        }
+      ],
+      "Neutral": [
+        {
+          "value": "Instagram",
+          "count": 240
+        },
+        {
+          "value": "Twitter",
+          "count": 227
+        },
+        {
+          "value": "Facebook",
+          "count": 215
+        }
+      ]
+    }
+  }
+}

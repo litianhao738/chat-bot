@@ -1,0 +1,384 @@
+{
+  "topics": [
+    {
+      "topic_id": 0,
+      "topic_label": "media / content / social media",
+      "top_keywords": [
+        "media",
+        "content",
+        "social media",
+        "music",
+        "friends",
+        "network",
+        "social network",
+        "search",
+        "videos",
+        "india",
+        "community",
+        "twitter"
+      ],
+      "num_companies": 119
+    },
+    {
+      "topic_id": 1,
+      "topic_label": "cancer / drug / drugs",
+      "top_keywords": [
+        "cancer",
+        "drug",
+        "drugs",
+        "therapeutics",
+        "cell",
+        "discovery",
+        "cells",
+        "diseases",
+        "disease",
+        "dna",
+        "therapies",
+        "bio"
+      ],
+      "num_companies": 163
+    },
+    {
+      "topic_id": 2,
+      "topic_label": "insurance / security / search",
+      "top_keywords": [
+        "insurance",
+        "security",
+        "search",
+        "cloud",
+        "engineering",
+        "compliance",
+        "construction",
+        "infrastructure",
+        "manage",
+        "employees",
+        "intelligence",
+        "api"
+      ],
+      "num_companies": 1281
+    },
+    {
+      "topic_id": 3,
+      "topic_label": "voice / agent / support",
+      "top_keywords": [
+        "voice",
+        "agent",
+        "support",
+        "enterprise",
+        "coding",
+        "voice agents",
+        "autonomous",
+        "workflows",
+        "browser",
+        "operations",
+        "infrastructure",
+        "coding agents"
+      ],
+      "num_companies": 253
+    },
+    {
+      "topic_id": 4,
+      "topic_label": "financial / investors / capital",
+      "top_keywords": [
+        "financial",
+        "investors",
+        "capital",
+        "ventures",
+        "backed",
+        "investment",
+        "combinator",
+        "trading",
+        "market",
+        "private",
+        "wealth",
+        "including"
+      ],
+      "num_companies": 352
+    },
+    {
+      "topic_id": 5,
+      "topic_label": "healthcare / care / medical",
+      "top_keywords": [
+        "healthcare",
+        "care",
+        "medical",
+        "patients",
+        "patient",
+        "clinical",
+        "health",
+        "providers",
+        "doctors",
+        "clinics",
+        "billing",
+        "insurance"
+      ],
+      "num_companies": 248
+    },
+    {
+      "topic_id": 6,
+      "topic_label": "students / learning / education",
+      "top_keywords": [
+        "students",
+        "learning",
+        "education",
+        "school",
+        "student",
+        "college",
+        "kids",
+        "teachers",
+        "schools",
+        "learn",
+        "language",
+        "skills"
+      ],
+      "num_companies": 125
+    },
+    {
+      "topic_id": 7,
+      "topic_label": "email / web / share",
+      "top_keywords": [
+        "email",
+        "web",
+        "share",
+        "support",
+        "just",
+        "life",
+        "need",
+        "content",
+        "information",
+        "day",
+        "google",
+        "api"
+      ],
+      "num_companies": 613
+    },
+    {
+      "topic_id": 8,
+      "topic_label": "videos / audio / streaming",
+      "top_keywords": [
+        "videos",
+        "audio",
+        "streaming",
+        "content",
+        "production",
+        "chat",
+        "creators",
+        "creation",
+        "voice",
+        "video chat",
+        "live",
+        "quality"
+      ],
+      "num_companies": 130
+    },
+    {
+      "topic_id": 9,
+      "topic_label": "code / api / alternative",
+      "top_keywords": [
+        "code",
+        "api",
+        "alternative",
+        "cloud",
+        "agent",
+        "observability",
+        "agents",
+        "github",
+        "infrastructure",
+        "workflows",
+        "production",
+        "enterprise"
+      ],
+      "num_companies": 136
+    },
+    {
+      "topic_id": 10,
+      "topic_label": "marketplace / brands / commerce",
+      "top_keywords": [
+        "marketplace",
+        "brands",
+        "commerce",
+        "buy",
+        "sell",
+        "stores",
+        "retailers",
+        "inventory",
+        "store",
+        "ecommerce",
+        "sellers",
+        "market"
+      ],
+      "num_companies": 348
+    },
+    {
+      "topic_id": 11,
+      "topic_label": "insurance / health insurance / care",
+      "top_keywords": [
+        "insurance",
+        "health insurance",
+        "care",
+        "healthcare",
+        "mental",
+        "digital",
+        "mental health",
+        "home",
+        "treatment",
+        "women",
+        "therapy",
+        "revenue"
+      ],
+      "num_companies": 155
+    },
+    {
+      "topic_id": 12,
+      "topic_label": "engineering / engineers / protein",
+      "top_keywords": [
+        "engineering",
+        "engineers",
+        "protein",
+        "designers",
+        "chip",
+        "web",
+        "code",
+        "hardware",
+        "creative",
+        "designs",
+        "org",
+        "process"
+      ],
+      "num_companies": 119
+    },
+    {
+      "topic_id": 13,
+      "topic_label": "games / game / play",
+      "top_keywords": [
+        "games",
+        "game",
+        "play",
+        "gaming",
+        "social",
+        "ipad",
+        "sports",
+        "multiplayer",
+        "players",
+        "development",
+        "play games",
+        "game development"
+      ],
+      "num_companies": 80
+    },
+    {
+      "topic_id": 14,
+      "topic_label": "models / training / model",
+      "top_keywords": [
+        "models",
+        "training",
+        "model",
+        "learning",
+        "ml",
+        "vision",
+        "scale",
+        "human",
+        "foundation",
+        "research",
+        "labs",
+        "voice"
+      ],
+      "num_companies": 175
+    },
+    {
+      "topic_id": 15,
+      "topic_label": "marketing / leads / crm",
+      "top_keywords": [
+        "marketing",
+        "leads",
+        "crm",
+        "revenue",
+        "email",
+        "b2b",
+        "outreach",
+        "lead",
+        "reps",
+        "deals",
+        "outbound",
+        "demos"
+      ],
+      "num_companies": 173
+    },
+    {
+      "topic_id": 16,
+      "topic_label": "energy / space / cost",
+      "top_keywords": [
+        "energy",
+        "space",
+        "cost",
+        "autonomous",
+        "carbon",
+        "water",
+        "electric",
+        "robotics",
+        "robots",
+        "industry",
+        "grid",
+        "systems"
+      ],
+      "num_companies": 391
+    },
+    {
+      "topic_id": 17,
+      "topic_label": "review / tests / run",
+      "top_keywords": [
+        "review",
+        "tests",
+        "run",
+        "web",
+        "vibe",
+        "agents",
+        "writing",
+        "production",
+        "workflows",
+        "custom",
+        "coding",
+        "internal"
+      ],
+      "num_companies": 171
+    },
+    {
+      "topic_id": 18,
+      "topic_label": "food / delivery / restaurants",
+      "top_keywords": [
+        "food",
+        "delivery",
+        "restaurants",
+        "restaurant",
+        "order",
+        "orders",
+        "demand",
+        "ordering",
+        "food delivery",
+        "meat",
+        "grocery",
+        "africa"
+      ],
+      "num_companies": 137
+    },
+    {
+      "topic_id": 19,
+      "topic_label": "payments / credit / payment",
+      "top_keywords": [
+        "payments",
+        "credit",
+        "payment",
+        "money",
+        "card",
+        "bank",
+        "banking",
+        "account",
+        "pay",
+        "cards",
+        "digital",
+        "africa"
+      ],
+      "num_companies": 325
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+{
+  "predictions": [
+    {
+      "query": "How can I validate a healthcare startup idea and reach clinics or doctors?",
+      "predictions": [
+        {
+          "topic_label": "healthcare / care / medical",
+          "topic_id": 5,
+          "score": 0.0556,
+          "top_keywords": [
+            "healthcare",
+            "care",
+            "medical",
+            "patients",
+            "patient",
+            "clinical"
+          ]
+        },
+        {
+          "topic_label": "insurance / health insurance / care",
+          "topic_id": 11,
+          "score": 0.0507,
+          "top_keywords": [
+            "insurance",
+            "health insurance",
+            "care",
+            "healthcare",
+            "mental",
+            "digital"
+          ]
+        },
+        {
+          "topic_label": "voice / agent / support",
+          "topic_id": 3,
+          "score": 0.0498,
+          "top_keywords": [
+            "voice",
+            "agent",
+            "support",
+            "enterprise",
+            "coding",
+            "voice agents"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "What should I know before building an AI coding agent company?",
+      "predictions": [
+        {
+          "topic_label": "voice / agent / support",
+          "topic_id": 3,
+          "score": 0.0561,
+          "top_keywords": [
+            "voice",
+            "agent",
+            "support",
+            "enterprise",
+            "coding",
+            "voice agents"
+          ]
+        },
+        {
+          "topic_label": "code / api / alternative",
+          "topic_id": 9,
+          "score": 0.0506,
+          "top_keywords": [
+            "code",
+            "api",
+            "alternative",
+            "cloud",
+            "agent",
+            "observability"
+          ]
+        },
+        {
+          "topic_label": "review / tests / run",
+          "topic_id": 17,
+          "score": 0.05,
+          "top_keywords": [
+            "review",
+            "tests",
+            "run",
+            "web",
+            "vibe",
+            "agents"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "How do I start an education platform for students and teachers?",
+      "predictions": [
+        {
+          "topic_label": "students / learning / education",
+          "topic_id": 6,
+          "score": 0.0612,
+          "top_keywords": [
+            "students",
+            "learning",
+            "education",
+            "school",
+            "student",
+            "college"
+          ]
+        },
+        {
+          "topic_label": "insurance / security / search",
+          "topic_id": 2,
+          "score": 0.0496,
+          "top_keywords": [
+            "insurance",
+            "security",
+            "search",
+            "cloud",
+            "engineering",
+            "compliance"
+          ]
+        },
+        {
+          "topic_label": "email / web / share",
+          "topic_id": 7,
+          "score": 0.0495,
+          "top_keywords": [
+            "email",
+            "web",
+            "share",
+            "support",
+            "just",
+            "life"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "What are common compliance concerns for a fintech or insurance startup?",
+      "predictions": [
+        {
+          "topic_label": "insurance / security / search",
+          "topic_id": 2,
+          "score": 0.0548,
+          "top_keywords": [
+            "insurance",
+            "security",
+            "search",
+            "cloud",
+            "engineering",
+            "compliance"
+          ]
+        },
+        {
+          "topic_label": "insurance / health insurance / care",
+          "topic_id": 11,
+          "score": 0.0524,
+          "top_keywords": [
+            "insurance",
+            "health insurance",
+            "care",
+            "healthcare",
+            "mental",
+            "digital"
+          ]
+        },
+        {
+          "topic_label": "financial / investors / capital",
+          "topic_id": 4,
+          "score": 0.0498,
+          "top_keywords": [
+            "financial",
+            "investors",
+            "capital",
+            "ventures",
+            "backed",
+            "investment"
+          ]
+        }
+      ]
+    },
+    {
+      "query": "How can a founder market a commerce brand through social media content?",
+      "predictions": [
+        {
+          "topic_label": "media / content / social media",
+          "topic_id": 0,
+          "score": 0.0802,
+          "top_keywords": [
+            "media",
+            "content",
+            "social media",
+            "music",
+            "friends",
+            "network"
+          ]
+        },
+        {
+          "topic_label": "marketplace / brands / commerce",
+          "topic_id": 10,
+          "score": 0.0527,
+          "top_keywords": [
+            "marketplace",
+            "brands",
+            "commerce",
+            "buy",
+            "sell",
+            "stores"
+          ]
+        },
+        {
+          "topic_label": "videos / audio / streaming",
+          "topic_id": 8,
+          "score": 0.049,
+          "top_keywords": [
+            "videos",
+            "audio",
+            "streaming",
+            "content",
+            "production",
+            "chat"
+          ]
+        }
+      ]
+    }
+  ]
+}

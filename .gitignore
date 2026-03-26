@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+
+.vendor/
+
+Thumbs.db
+.DS_Store
+
+rag/output/answer.json
+rag/output/followups.json
+rag/output/retrieval_results.json

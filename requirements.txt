@@ -1,0 +1,12 @@
+atproto
+beautifulsoup4
+curl_cffi
+numpy
+pandas
+playwright
+playwright-stealth
+requests
+scikit-learn
+scipy
+streamlit
+vaderSentiment

@@ -1,0 +1,363 @@
+{
+  "objective": "Objective 2 - classify topics of enquiry from the knowledge base",
+  "input_files": {
+    "kb_path": "project8_kb\\knowledge_base_chunks.jsonl",
+    "taxonomy_path": "project8_kb\\topic_taxonomy.json"
+  },
+  "sample_summary": {
+    "n_training_samples_total": 38458,
+    "sample_type_distribution": {
+      "topic_template": 27470,
+      "kb_chunk": 5494,
+      "keyword_prompt": 5494
+    }
+  },
+  "metrics": {
+    "train_samples": 30758,
+    "test_samples": 1100,
+    "n_labels": 20,
+    "accuracy": 0.6282,
+    "macro_f1": 0.6555,
+    "weighted_f1": 0.6104,
+    "avg_prediction_confidence": 0.0528,
+    "label_distribution": {
+      "insurance / security / search": 1281,
+      "email / web / share": 613,
+      "energy / space / cost": 391,
+      "financial / investors / capital": 352,
+      "marketplace / brands / commerce": 348,
+      "payments / credit / payment": 325,
+      "voice / agent / support": 253,
+      "healthcare / care / medical": 248,
+      "models / training / model": 175,
+      "marketing / leads / crm": 173,
+      "review / tests / run": 171,
+      "cancer / drug / drugs": 163,
+      "insurance / health insurance / care": 155,
+      "food / delivery / restaurants": 137,
+      "code / api / alternative": 136,
+      "videos / audio / streaming": 130,
+      "students / learning / education": 125,
+      "engineering / engineers / protein": 119,
+      "media / content / social media": 119,
+      "games / game / play": 80
+    }
+  },
+  "per_label_report": {
+    "cancer / drug / drugs": {
+      "precision": 0.8966,
+      "recall": 0.7879,
+      "f1-score": 0.8387,
+      "support": 33
+    },
+    "code / api / alternative": {
+      "precision": 0.3333,
+      "recall": 0.8519,
+      "f1-score": 0.4792,
+      "support": 27
+    },
+    "email / web / share": {
+      "precision": 0.7971,
+      "recall": 0.4472,
+      "f1-score": 0.5729,
+      "support": 123
+    },
+    "energy / space / cost": {
+      "precision": 0.7424,
+      "recall": 0.6282,
+      "f1-score": 0.6806,
+      "support": 78
+    },
+    "engineering / engineers / protein": {
+      "precision": 0.3902,
+      "recall": 0.6667,
+      "f1-score": 0.4923,
+      "support": 24
+    },
+    "financial / investors / capital": {
+      "precision": 0.7471,
+      "recall": 0.9286,
+      "f1-score": 0.828,
+      "support": 70
+    },
+    "food / delivery / restaurants": {
+      "precision": 0.6047,
+      "recall": 0.963,
+      "f1-score": 0.7429,
+      "support": 27
+    },
+    "games / game / play": {
+      "precision": 0.6957,
+      "recall": 1.0,
+      "f1-score": 0.8205,
+      "support": 16
+    },
+    "healthcare / care / medical": {
+      "precision": 0.8,
+      "recall": 0.8,
+      "f1-score": 0.8,
+      "support": 50
+    },
+    "insurance / health insurance / care": {
+      "precision": 0.6122,
+      "recall": 0.9677,
+      "f1-score": 0.75,
+      "support": 31
+    },
+    "insurance / security / search": {
+      "precision": 0.9178,
+      "recall": 0.2617,
+      "f1-score": 0.4073,
+      "support": 256
+    },
+    "marketing / leads / crm": {
+      "precision": 0.4909,
+      "recall": 0.7714,
+      "f1-score": 0.6,
+      "support": 35
+    },
+    "marketplace / brands / commerce": {
+      "precision": 0.7656,
+      "recall": 0.7,
+      "f1-score": 0.7313,
+      "support": 70
+    },
+    "media / content / social media": {
+      "precision": 0.5641,
+      "recall": 0.9167,
+      "f1-score": 0.6984,
+      "support": 24
+    },
+    "models / training / model": {
+      "precision": 0.4857,
+      "recall": 0.9714,
+      "f1-score": 0.6476,
+      "support": 35
+    },
+    "payments / credit / payment": {
+      "precision": 0.75,
+      "recall": 0.8769,
+      "f1-score": 0.8085,
+      "support": 65
+    },
+    "review / tests / run": {
+      "precision": 0.2391,
+      "recall": 0.3235,
+      "f1-score": 0.275,
+      "support": 34
+    },
+    "students / learning / education": {
+      "precision": 0.6471,
+      "recall": 0.88,
+      "f1-score": 0.7458,
+      "support": 25
+    },
+    "videos / audio / streaming": {
+      "precision": 0.5556,
+      "recall": 0.7692,
+      "f1-score": 0.6452,
+      "support": 26
+    },
+    "voice / agent / support": {
+      "precision": 0.4444,
+      "recall": 0.7059,
+      "f1-score": 0.5455,
+      "support": 51
+    },
+    "macro avg": {
+      "precision": 0.624,
+      "recall": 0.7609,
+      "f1-score": 0.6555,
+      "support": 1100
+    },
+    "weighted avg": {
+      "precision": 0.7173,
+      "recall": 0.6282,
+      "f1-score": 0.6104,
+      "support": 1100
+    },
+    "accuracy": 0.6282
+  },
+  "test_examples": [
+    {
+      "text": "Abhi Abhi. Abhi is Pakistan's 1st financial wellness platform focusing on…. An early wage access platform allowing salaried employees to draw down a percentage of their accrued salary before the next payroll cycle. Helping employees to avoid late payment fee on bills, access emergency cash and substitute expensive debt. We work on a B2B2C model allowing companies to extend the product as a benefits program to their employee base.. allowing, employees, financial wellness, draw, percentage, access, pakistan, 1st, extend, emergency, salary, avoid. allowing employees financial wellness draw percentage access pakistan 1st extend emergency salary avoid",
+      "true_label": "insurance / security / search",
+      "predicted_label": "financial / investors / capital",
+      "confidence": 0.0523
+    },
+    {
+      "text": "Interstate Interstate. Create & Share Product Roadmaps. BakedCode create applications which help developers and businesses, focusing on making new solutions or improving on current solutions.. focusing, improving, current, applications, share. focusing improving current applications share",
+      "true_label": "email / web / share",
+      "predicted_label": "email / web / share",
+      "confidence": 0.0531
+    },
+    {
+      "text": "Hedgehog Hedgehog. Building robotic mushroom farms. Hedgehog builds robotic mushroom farms. Our robots eliminate labor and our AI optimizes grow conditions to increase yield. We’ll soon grow mushrooms and fungi for <1/3rd the cost of leading growers. Fungi may address our food system’s biggest problems: they transform agricultural waste into protein-rich foods with near-zero environmental impact. Hedgehog’s technology is unleashing fungi as our next major food source.. farms, robotic, food, grow, unleashing, near zero, growers, agricultural, 3rd, yield, environmental, optimizes. farms robotic food grow unleashing near zero growers agricultural 3rd yield environmental optimizes",
+      "true_label": "food / delivery / restaurants",
+      "predicted_label": "food / delivery / restaurants",
+      "confidence": 0.0535
+    },
+    {
+      "text": "Storyboarder Storyboarder. Storyboarder is a tool and a platform for anyone to create, share, and sell webcomics. In East Asia, the webcomic (or digital manga) industry is an $12B market and rapidly growing to the rest of the world. Webtoon, the largest company in the space, generates $100M / month in revenue. However, their addressable market is limited by their content creators, who need know how to draw. Readers are desperate for a greater variety of stories in webcomics. Through years of working with filmmakers, we’ve built extremely easy to use storyboarding software that has 700K users. We’re democratizing visual storytelling to everyone. We’re working on the next generation that, through advances in video game interfaces, ubiquitous 3D compute, and AI, will allow anyone to easily create scenes, pose characters, to create webcomics. Storyboarder is backed by Y Combinator (W23), David Karp (Tumblr Founder), Andrew Kortina (Venmo Founder), and other product focused investors.. Storyboarder is a tool and a platform for anyone to create, share, and sell webcomics. In East Asia, the webcomic (or digital manga) industry is an $12B market and rapidly growing to the rest of the world. Webtoon, the largest company in the space, generates $100M / month in revenue. However, their addressable market is limited by their content creators, who need know how to draw. Readers are desperate for a greater variety of stories in webcomics. Through years of working with filmmakers, we’ve built extremely easy to use storyboarding software that has 700K users. We’re democratizing visual storytelling to everyone. We’re working on the next generation that, through advances in video game interfaces, ubiquitous 3D compute, and AI, will allow anyone to easily create scenes, pose characters, to create webcomics. Storyboarder is backed by Y Combinator (W23), David Karp (Tumblr Founder), Andrew Kortina (Venmo Founder), and other product focused investors.. readers, video game, addressable market, market, draw, characters, storytelling, addressable, david, need know, andrew, east asia. readers video game addressable market market draw characters storytelling addressable david need know andrew east asia",
+      "true_label": "financial / investors / capital",
+      "predicted_label": "games / game / play",
+      "confidence": 0.0515
+    },
+    {
+      "text": "Berry Berry. Scale customer success and onboarding with AI. Berry offers an AI CSM that scales customer success for SaaS companies. Every post-sales organization faces the challenge of scaling customer success without having to hire more. Berry combines the best of the two worlds - taking the white-glove onboarding experience and offering it at scale. Our AI CSM onboards, trains and grows accounts for you non-stop. It’s a 10x hire to your team - at a fraction of the cost.. success, onboarding, hire, glove, white glove, faces, scale, trains, grows, worlds, scales, fraction cost. success onboarding hire glove white glove faces scale trains grows worlds scales fraction cost",
+      "true_label": "marketing / leads / crm",
+      "predicted_label": "energy / space / cost",
+      "confidence": 0.0519
+    },
+    {
+      "text": "Rootly Rootly. AI-native on-call and incident response carefully crafted to help…. Rootly is a modern on-call and incident management platform used by top YC companies like Dropbox, Lattice, Webflow, Faire, but also Figma, LinkedIn, NVIDIA and 100s more.. incident, faire, lattice, carefully, incident response, crafted, webflow, 100s, nvidia, figma, dropbox, response. incident faire lattice carefully incident response crafted webflow 100s nvidia figma dropbox response",
+      "true_label": "insurance / security / search",
+      "predicted_label": "insurance / security / search",
+      "confidence": 0.0502
+    },
+    {
+      "text": "Minimum Minimum. Helping corporates achieve Net Zero through tech solutions.. Minimum lets you calculate, report on, and reduce the carbon emissions of your business, whether you're a corporate or an investment fund.. minimum, reduce carbon, calculate, carbon emissions, net, emissions, report, carbon, achieve, fund, corporate, zero. minimum reduce carbon calculate carbon emissions net emissions report carbon achieve fund corporate zero",
+      "true_label": "energy / space / cost",
+      "predicted_label": "energy / space / cost",
+      "confidence": 0.052
+    },
+    {
+      "text": "Virtual events for remote teams Virtual events for remote teams. Mini Exhibitions: Virtual events for remote teams. Virtual events for remote teams. events, remote, virtual, mini. events remote virtual mini",
+      "true_label": "email / web / share",
+      "predicted_label": "videos / audio / streaming",
+      "confidence": 0.0505
+    },
+    {
+      "text": "Imgfave Imgfave. A fun image sharing community.. imgfave is a place to discover and share images. They allow users to collect favorite images and organize them into fun collections like humor, art, photography, fashion, weddings and more.. fun, images, photography, collections, organize, favorite, image, fashion, art, sharing, collect, discover. fun images photography collections organize favorite image fashion art sharing collect discover",
+      "true_label": "email / web / share",
+      "predicted_label": "email / web / share",
+      "confidence": 0.0513
+    },
+    {
+      "text": "Thunder Compute Thunder Compute. The world's cheapest GPU cloud. One-click GPU instances with persistent storage, snapshots, and hot-swappable hardware, with the lowest prices anywhere.. gpu, snapshots, cheapest, hot, instances, persistent, lowest, compute, prices, storage, click, hardware. gpu snapshots cheapest hot instances persistent lowest compute prices storage click hardware",
+      "true_label": "insurance / security / search",
+      "predicted_label": "insurance / security / search",
+      "confidence": 0.0505
+    },
+    {
+      "text": "Volantio Volantio. Post-booking revenue and capacity optimization for airlines…. Volantio is a leader in travel technology software focused on revenue and capacity optimization for airlines. Based in Atlanta, GA, Volantio partners with major airlines globally such as Qantas, Iberia, Alaska Airlines, Volaris, Jetstar Airways, Emirates, Ethiopian Airlines, Scoot-Tigerair, and others. The company’s Yana platform enables airlines to generate incremental revenue and reduce operational costs, while putting greater predictability and control back into the hands of their customers. We are backed by institutional and strategic investors from around the world including Ingleside Investors, JetBlue Technology Ventures, International Airlines Group (IAG), and Qantas Ventures.. airlines, capacity, revenue, optimization, ventures, investors, atlanta, operational costs, incremental revenue, incremental, putting, hands. airlines capacity revenue optimization ventures investors atlanta operational costs incremental revenue incremental putting hands",
+      "true_label": "financial / investors / capital",
+      "predicted_label": "financial / investors / capital",
+      "confidence": 0.0538
+    },
+    {
+      "text": "Airware Airware. Airware provides end-to-end solutions that enable enterprises to…. Airware offers commercial drone solutions, enabling enterprises to take full advantage of aerial data for any business application. Airware’s solutions combine hardware, software, and cloud services to enable companies to efficiently manage and safely and reliably operate commercial drones at scale.. commercial, enterprises, aerial, reliably, drone, drones, advantage, safely, combine, efficiently, operate, hardware. commercial enterprises aerial reliably drone drones advantage safely combine efficiently operate hardware",
+      "true_label": "energy / space / cost",
+      "predicted_label": "insurance / security / search",
+      "confidence": 0.0507
+    },
+    {
+      "text": "Starcity Starcity. Starcity was one of the largest co-living brands. Exit to Common in…. Starcity was one of the largest co-living brands. Exit to Common in 2021.. exit, common, living, largest, brands, 2021. exit common living largest brands 2021",
+      "true_label": "marketplace / brands / commerce",
+      "predicted_label": "marketplace / brands / commerce",
+      "confidence": 0.0539
+    },
+    {
+      "text": "Medpiper Technologies Inc Medpiper Technologies Inc. MedPiper Technologies, Inc: Salesforce for health data. MedPiper, a full-stack data platform that unifies and delivers end-to-end process for member and population health data: from data sourcing -> data verification -> data readiness -> data standardisation -> data logistics -> data interoperability . We have enabled payors, life sciences, pharma and health platforms obtain deeper insights into health, delivering better coverage and health outcomes. Aside from increasing network of healthcare & social determinant data partners, we move workloads that need extensive data handling workflows, to a simple workbench that can run and deploy rule engines on insights and braoder analytics : contributing to increased customer engagement, depeer personalised products, better GM structure etc for our clients. A few core things we deliver: - Easy integration (API-accessible), - A seamless experience (for all involved: patient, payor, provider, lab, mobile workforce), - A commitment to clinical quality standards,. health, insights, readiness, payors, seamless experience, contributing, rule, obtain, personalised, commitment, workloads, deeper. health insights readiness payors seamless experience contributing rule obtain personalised commitment workloads deeper",
+      "true_label": "insurance / health insurance / care",
+      "predicted_label": "insurance / health insurance / care",
+      "confidence": 0.0531
+    },
+    {
+      "text": "The Human Utility The Human Utility. The Human Utility seeks to eliminate water service disconnections for…. Founded July 2014, The Human Utility (formerly known as the Detroit Water Project) matches families needing help with utility bills to people who want to help through payments directly to utility companies. For over 40 million families in the United States, water and other essential utilities may be unaffordable. In order to afford utilities, families often forgo medication, food, and transportation. The Human Utility's platform divides a bill similar to a loan syndicate expanding the possible number of donors from around the world able to join together to ensure families never lose access to utility service. Donors are matched with a specific family or donate to a universal assistance fund. Later, we use utility data to design interventions addressing the root causes of why people need help with their utility bills with the goal of never having them lose service again.. utility, families, water, human, utilities, lose, bills, donate, 40 million, matched, root causes, interventions. utility families water human utilities lose bills donate 40 million matched root causes interventions",
+      "true_label": "energy / space / cost",
+      "predicted_label": "food / delivery / restaurants",
+      "confidence": 0.0511
+    },
+    {
+      "text": "Siphox Health Siphox Health. Wearable and At-Home protein monitoring with silicon photonic chips. We are developing a new paradigm for consumer health tech wearables by replacing a 100lb optical instrument with an area of silicon smaller than a postage stamp.. silicon, instrument, health, health tech, paradigm, chips, optical, wearables, wearable, smaller, protein, area. silicon instrument health health tech paradigm chips optical wearables wearable smaller protein area",
+      "true_label": "insurance / health insurance / care",
+      "predicted_label": "insurance / health insurance / care",
+      "confidence": 0.0546
+    },
+    {
+      "text": "Curri Curri. Construction & industrial logistics platform.. Curri provides on-demand, last-mile logistics for construction and adjacent industries with our nationwide fleet of cars, trucks, and flatbeds.. construction, logistics, trucks, mile, cars, nationwide, fleet, industrial, industries, demand, provides. construction logistics trucks mile cars nationwide fleet industrial industries demand provides",
+      "true_label": "insurance / security / search",
+      "predicted_label": "energy / space / cost",
+      "confidence": 0.0506
+    },
+    {
+      "text": "Naytev Naytev. Naytev automates paid and organic social media management in one place. Y-Combinator (S14) A/B test your videos, articles, and images on Facebook, and automatically publish the best version everywhere. Get started at www.naytev.com. Testing is every top social team's secret weapon. It's no secret that standing out in the News Feed has become more difficult. That's why elite content teams test how the content they post to Facebook will appear. We help the top brands and publishers in the world stand out in the noise and reach larger audiences. With Naytev's cutting-edge techniques, you can run expert-level tests in a matter of minutes. Already an expert? We can help you scale your test volume and improve the quality of your tests.. secret, test, tests, expert, facebook, social, content, appear, improve quality, elite, noise, articles. secret test tests expert facebook social content appear improve quality elite noise articles",
+      "true_label": "media / content / social media",
+      "predicted_label": "media / content / social media",
+      "confidence": 0.0565
+    },
+    {
+      "text": "Terark Terark. Fastest Storage Engine with the Best Compression, we enables direct…. Terark built a new storage engine for Database and Data Systems. Our technology enables direct search on highly compressed data, with 200X faster read performance and more than 10X storage savings (better than Google's LevelDB, Facebook's RocksDB), getting larger scalability with lower cost for big data applications. Alibaba is our paying customer, and we are a YCombinator company.. storage, direct, engine, compression, scalability, lower cost, larger, ycombinator, paying, read, savings, lower. storage direct engine compression scalability lower cost larger ycombinator paying read savings lower",
+      "true_label": "energy / space / cost",
+      "predicted_label": "energy / space / cost",
+      "confidence": 0.0522
+    },
+    {
+      "text": "The Good Food Institute The Good Food Institute. Building a world where alternative proteins are no longer alternative.. The Good Food Institute is a nonprofit working internationally to accelerate alternative protein innovation. Globally, meat consumption is the highest it’s ever been. According to the UN, global meat production is projected to double by 2050. With plant-based meat, cultivated meat, and fermentation, we can mitigate the environmental impact of our food system, decrease the risk of zoonotic disease, and ultimately feed more people with fewer resources. By making meat from plants and cultivating meat from cells, we can modernize meat production.. meat, alternative, food, institute, good, production, fermentation, projected, according, internationally, decrease, modernize. meat alternative food institute good production fermentation projected according internationally decrease modernize",
+      "true_label": "food / delivery / restaurants",
+      "predicted_label": "food / delivery / restaurants",
+      "confidence": 0.0532
+    },
+    {
+      "text": "Zendar Zendar. We make high definition radar allowing self-driving cars to see in…. Zendar develops high-definition radar for autonomous vehicles.. radar, driving cars, self driving cars, autonomous vehicles, high, self driving, cars, develops, vehicles, driving, allowing, autonomous. radar driving cars self driving cars autonomous vehicles high self driving cars develops vehicles driving allowing autonomous",
+      "true_label": "energy / space / cost",
+      "predicted_label": "energy / space / cost",
+      "confidence": 0.0521
+    },
+    {
+      "text": "Harbera Harbera. AI Healthcare Provider Credentialing Software. Harbera helps clinic keep their doctors credentialed and compliant. Our AI software continuously monitors and proactively helps admin teams re-credential doctors, preventing denied claims, disruptions in patient care, and lost revenue caused by doctors falling out-of-network.. doctors, healthcare provider, credentialing, falling, disruptions, denied, lost revenue, caused, preventing, patient care, monitors, proactively. doctors healthcare provider credentialing falling disruptions denied lost revenue caused preventing patient care monitors proactively",
+      "true_label": "healthcare / care / medical",
+      "predicted_label": "healthcare / care / medical",
+      "confidence": 0.0554
+    },
+    {
+      "text": "Post.fm Post.fm. New email inbox.. New email inbox.. inbox, email, fm, post. inbox email fm post",
+      "true_label": "email / web / share",
+      "predicted_label": "email / web / share",
+      "confidence": 0.0537
+    },
+    {
+      "text": "Permutive Permutive. Rebuilding data in advertising to protect privacy. As third-party identifiers like the cookie disappear, ad-tech breaks—targeting, frequency capping and measurement disappear. We're rebuilding data infrastructure in advertising to work with cohorts—privacy safe descriptions of users—which enable advertising use cases without the need for sharing personal identifiers. We do this by moving data processing and management out of the cloud, and on to the user's device.. advertising, rebuilding, privacy, descriptions, frequency, measurement, breaks, ad, targeting, protect, party, moving. advertising rebuilding privacy descriptions frequency measurement breaks ad targeting protect party moving",
+      "true_label": "insurance / security / search",
+      "predicted_label": "insurance / security / search",
+      "confidence": 0.0506
+    },
+    {
+      "text": "Exin Therapeutics Exin Therapeutics. We use AI and high-throughput mouse studies to discover therapeutics that modify neural activity in the brain. The initial focus is on epilepsies associated with autism and Parkinson’s disease with the potential to expand to any neurological disorder underlined by a dysfunction in neural activity. Our R&D is guided by AI models trained on high-density multimodal mouse data generated in-house. We are 3 Oxford-trained neuroscientists supported by an experienced SAB from Harvard, Science Corp (ex-Neuralink), EPFL, Meta, and UCL. In 1.5 months since landing in SF, we went from nothing to (1) opening and operating an animal lab in South SF, (2) obtaining a proof-of-concept in mice, (3) building a multimodal AI model that directs our screening approach and (4) submitting two provisional patents; all while utilizing less than 50% of our YC funding.. We use AI and high-throughput mouse studies to discover therapeutics that modify neural activity in the brain. The initial focus is on epilepsies associated with autism and Parkinson’s disease with the potential to expand to any neurological disorder underlined by a dysfunction in neural activity. Our R&D is guided by AI models trained on high-density multimodal mouse data generated in-house. We are 3 Oxford-trained neuroscientists supported by an experienced SAB from Harvard, Science Corp (ex-Neuralink), EPFL, Meta, and UCL. In 1.5 months since landing in SF, we went from nothing to (1) opening and operating an animal lab in South SF, (2) obtaining a proof-of-concept in mice, (3) building a multimodal AI model that directs our screening approach and (4) submitting two provisional patents; all while utilizing less than 50% of our YC funding.. mouse, neural, sf, multimodal, activity, trained, therapeutics, parkinson, submitting, density, concept, disorder. mouse neural sf multimodal activity trained therapeutics parkinson submitting density concept disorder",
+      "true_label": "cancer / drug / drugs",
+      "predicted_label": "models / training / model",
+      "confidence": 0.0527
+    },
+    {
+      "text": "Firstbase.io Firstbase.io. The all-in-one startup operating system. Incorporation, compliance, bookkeeping, and taxes – all in one place.. taxes, bookkeeping, io, operating, place, compliance. taxes bookkeeping io operating place compliance",
+      "true_label": "insurance / security / search",
+      "predicted_label": "insurance / security / search",
+      "confidence": 0.0519
+    },
+    {
+      "text": "Riveter Riveter. Turn the web into structured data. Riveter fully automates web data extraction, end to end. With a single API, agents can search, scrape, and structure data from the web. Customers like Snapchat and OpenAI use us to enrich datasets using Riveter's AI search agents that combine data from the web with third party or internal data. Their AI agents, custom scrapers, and integrations pack the power of browser use and automation for search, at a cost that allows for scale. You can even create a custom data API for repeated searches live in your app or internal databases. Perplexity and ChatGPT are great for single questions, but they can’t handle large amounts of data at once. And they’re working with a single agent and context window instead of one in every cell. And Riveter’s web browsing can go further—even reading PDFs and images that may contain answers. Most teams still spend hours (or hire UpWorkers/contractors) to manually copy product specs, check competitor pricing, pull custom KYB/KYC data to assess customer risk, or scrape filings. Or they spend months building web scrapers, and when that still doesn't work, they come to Riveter. Our founding team (Cody Watters - CTO, Abby Grills, CEO) brings deep product and engineering expertise from to YC-backed companies Gusto, Retool, and Middesk.. web, search, custom, single, agents, internal, spend, api, contain, kyb, browsing, retool. web search custom single agents internal spend api contain kyb browsing retool",
+      "true_label": "voice / agent / support",
+      "predicted_label": "voice / agent / support",
+      "confidence": 0.0518
+    },
+    {
+      "text": "Circular Circular. Subscription consumer electronics for Asia. Circular is accelerating the adoption of the circular economy by making subscriptions the best way to access and experience tech: from smartphones, laptops, and headphones to gaming, VR and wearables. Our customers get their hands on the best tech through low-cost, convenient subscriptions. They can pay monthly, keep it as long as they want, and if they love it, buy it. If they return it, we carefully refurbish it and pass it on to the next loving owner - radically extending its useful life.. subscriptions, tech, pay monthly, extending, carefully, laptops, consumer electronics, smartphones, owner, wearables, radically, pass. subscriptions tech pay monthly extending carefully laptops consumer electronics smartphones owner wearables radically pass",
+      "true_label": "marketplace / brands / commerce",
+      "predicted_label": "marketplace / brands / commerce",
+      "confidence": 0.0507
+    },
+    {
+      "text": "Allsome Fulfillment Allsome Fulfillment. Fulfillment platform to build Southeast Asia e-commerce operations. AllSome is a Fulfillment-as-a-Service platform for Southeast Asia e-commerce sellers to build self-run fulfillment operations. No upfront fee, 99.99% on time shipping and 50% cost saving.. fulfillment, southeast asia, southeast, 99, asia, commerce, operations, upfront, fee, shipping, sellers, saving. fulfillment southeast asia southeast 99 asia commerce operations upfront fee shipping sellers saving",
+      "true_label": "marketplace / brands / commerce",
+      "predicted_label": "marketplace / brands / commerce",
+      "confidence": 0.0525
+    },
+    {
+      "text": "Convictional Convictional. Convictional replaces Slack to keep teams mission aligned by design.. Convictional (convictional.com) is the company OS that replaces Slack, to keep teams mission aligned by design. Your goals, email, meetings, chat and knowledge search in one place, where your team's effectiveness compounds.. aligned, replaces, slack, design, mission, compounds, effectiveness, os, meetings, goals, chat, knowledge. aligned replaces slack design mission compounds effectiveness os meetings goals chat knowledge",
+      "true_label": "engineering / engineers / protein",
+      "predicted_label": "engineering / engineers / protein",
+      "confidence": 0.0516
+    }
+  ]
+}

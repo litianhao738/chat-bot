@@ -1,0 +1,42 @@
+{
+  "source_family": "business_guide",
+  "page_count": 3,
+  "chunk_count": 24,
+  "live_fetch_count": 1,
+  "fallback_count": 2,
+  "pages": [
+    {
+      "company_id": "bg-netsuite-retail-supply-chain",
+      "title": "Retail Supply Chain Management Guide",
+      "url": "https://www.netsuite.com/portal/resource/articles/erp/retail-supply-chain-management.shtml",
+      "source_name": "NetSuite",
+      "topic_label": "retail / supply chain / operations",
+      "business_stage": "operations",
+      "access_mode": "manifest_fallback",
+      "fetch_backend": "",
+      "fetch_error": "RuntimeError: requests=HTTPError: 403 Client Error: Forbidden for url: https://www.netsuite.com/portal/resource/articles/erp/retail-supply-chain-management.shtml"
+    },
+    {
+      "company_id": "bg-businessnewsdaily-open-retail-store",
+      "title": "How to Open a Retail Store",
+      "url": "https://www.businessnewsdaily.com/15169-how-to-open-a-retail-store.html",
+      "source_name": "Business News Daily",
+      "topic_label": "retail / store launch / small business guide",
+      "business_stage": "launch",
+      "access_mode": "live_fetch_requests",
+      "fetch_backend": "requests",
+      "fetch_error": ""
+    },
+    {
+      "company_id": "bg-forbesadvisor-start-business",
+      "title": "How to Start a Business",
+      "url": "https://www.forbes.com/advisor/business/how-to-start-a-business/",
+      "source_name": "Forbes Advisor",
+      "topic_label": "business startup / planning / launch",
+      "business_stage": "planning",
+      "access_mode": "manifest_fallback",
+      "fetch_backend": "",
+      "fetch_error": "RuntimeError: requests=HTTPError: 403 Client Error: Forbidden for url: https://www.forbes.com/advisor/business/how-to-start-a-business/"
+    }
+  ]
+}

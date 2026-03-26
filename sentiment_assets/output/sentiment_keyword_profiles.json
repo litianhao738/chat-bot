@@ -1,0 +1,430 @@
+{
+  "top_keywords_by_sentiment": {
+    "Positive": [
+      {
+        "value": "new",
+        "count": 10
+      },
+      {
+        "value": "day",
+        "count": 4
+      },
+      {
+        "value": "weekend",
+        "count": 4
+      },
+      {
+        "value": "feeling",
+        "count": 4
+      },
+      {
+        "value": "enjoying",
+        "count": 3
+      },
+      {
+        "value": "about",
+        "count": 3
+      },
+      {
+        "value": "exploring",
+        "count": 3
+      },
+      {
+        "value": "reflecting",
+        "count": 3
+      },
+      {
+        "value": "good",
+        "count": 3
+      },
+      {
+        "value": "book",
+        "count": 3
+      },
+      {
+        "value": "attending",
+        "count": 3
+      },
+      {
+        "value": "park",
+        "count": 2
+      },
+      {
+        "value": "finished",
+        "count": 2
+      },
+      {
+        "value": "workout",
+        "count": 2
+      },
+      {
+        "value": "excited",
+        "count": 2
+      },
+      {
+        "value": "upcoming",
+        "count": 2
+      },
+      {
+        "value": "cozy",
+        "count": 2
+      },
+      {
+        "value": "movie",
+        "count": 2
+      },
+      {
+        "value": "release",
+        "count": 2
+      },
+      {
+        "value": "out",
+        "count": 2
+      }
+    ],
+    "Negative": [
+      {
+        "value": "feeling",
+        "count": 2
+      },
+      {
+        "value": "traffic",
+        "count": 1
+      },
+      {
+        "value": "terrible",
+        "count": 1
+      },
+      {
+        "value": "morning",
+        "count": 1
+      },
+      {
+        "value": "political",
+        "count": 1
+      },
+      {
+        "value": "discussions",
+        "count": 1
+      },
+      {
+        "value": "heating",
+        "count": 1
+      },
+      {
+        "value": "timeline",
+        "count": 1
+      },
+      {
+        "value": "bit",
+        "count": 1
+      },
+      {
+        "value": "under",
+        "count": 1
+      },
+      {
+        "value": "weather",
+        "count": 1
+      },
+      {
+        "value": "winter",
+        "count": 1
+      },
+      {
+        "value": "blues",
+        "count": 1
+      },
+      {
+        "value": "got",
+        "count": 1
+      },
+      {
+        "value": "low",
+        "count": 1
+      }
+    ],
+    "Neutral": [
+      {
+        "value": "through",
+        "count": 51
+      },
+      {
+        "value": "each",
+        "count": 39
+      },
+      {
+        "value": "new",
+        "count": 33
+      },
+      {
+        "value": "like",
+        "count": 27
+      },
+      {
+        "value": "dreams",
+        "count": 25
+      },
+      {
+        "value": "laughter",
+        "count": 24
+      },
+      {
+        "value": "into",
+        "count": 24
+      },
+      {
+        "value": "joy",
+        "count": 24
+      },
+      {
+        "value": "heart",
+        "count": 24
+      },
+      {
+        "value": "after",
+        "count": 23
+      },
+      {
+        "value": "night",
+        "count": 23
+      },
+      {
+        "value": "day",
+        "count": 22
+      },
+      {
+        "value": "life",
+        "count": 21
+      },
+      {
+        "value": "feeling",
+        "count": 20
+      },
+      {
+        "value": "world",
+        "count": 20
+      },
+      {
+        "value": "journey",
+        "count": 20
+      },
+      {
+        "value": "art",
+        "count": 20
+      },
+      {
+        "value": "beauty",
+        "count": 19
+      },
+      {
+        "value": "sky",
+        "count": 19
+      },
+      {
+        "value": "where",
+        "count": 19
+      }
+    ]
+  },
+  "top_hashtags_by_sentiment": {
+    "Positive": [
+      {
+        "value": "nature",
+        "count": 2
+      },
+      {
+        "value": "fitness",
+        "count": 2
+      },
+      {
+        "value": "reflection",
+        "count": 2
+      },
+      {
+        "value": "gaming",
+        "count": 2
+      },
+      {
+        "value": "reading",
+        "count": 2
+      },
+      {
+        "value": "virtualreality",
+        "count": 2
+      },
+      {
+        "value": "art",
+        "count": 2
+      },
+      {
+        "value": "cooking",
+        "count": 2
+      },
+      {
+        "value": "park",
+        "count": 1
+      },
+      {
+        "value": "workout",
+        "count": 1
+      },
+      {
+        "value": "travel",
+        "count": 1
+      },
+      {
+        "value": "adventure",
+        "count": 1
+      },
+      {
+        "value": "gratitude",
+        "count": 1
+      },
+      {
+        "value": "positivevibes",
+        "count": 1
+      },
+      {
+        "value": "rainydays",
+        "count": 1
+      }
+    ],
+    "Negative": [
+      {
+        "value": "traffic",
+        "count": 1
+      },
+      {
+        "value": "morning",
+        "count": 1
+      },
+      {
+        "value": "politics",
+        "count": 1
+      },
+      {
+        "value": "debate",
+        "count": 1
+      },
+      {
+        "value": "sickday",
+        "count": 1
+      },
+      {
+        "value": "health",
+        "count": 1
+      },
+      {
+        "value": "winterblues",
+        "count": 1
+      },
+      {
+        "value": "mood",
+        "count": 1
+      }
+    ],
+    "Neutral": [
+      {
+        "value": "serenity",
+        "count": 15
+      },
+      {
+        "value": "excitement",
+        "count": 13
+      },
+      {
+        "value": "gratitude",
+        "count": 12
+      },
+      {
+        "value": "despair",
+        "count": 11
+      },
+      {
+        "value": "nostalgia",
+        "count": 11
+      },
+      {
+        "value": "contentment",
+        "count": 10
+      },
+      {
+        "value": "curiosity",
+        "count": 10
+      },
+      {
+        "value": "awe",
+        "count": 9
+      },
+      {
+        "value": "grief",
+        "count": 9
+      },
+      {
+        "value": "loneliness",
+        "count": 9
+      },
+      {
+        "value": "hopeful",
+        "count": 9
+      },
+      {
+        "value": "joy",
+        "count": 8
+      },
+      {
+        "value": "acceptance",
+        "count": 8
+      },
+      {
+        "value": "confusion",
+        "count": 8
+      },
+      {
+        "value": "elation",
+        "count": 7
+      }
+    ]
+  },
+  "top_platforms_by_sentiment": {
+    "Positive": [
+      {
+        "value": "Instagram",
+        "count": 17
+      },
+      {
+        "value": "Facebook",
+        "count": 16
+      },
+      {
+        "value": "Twitter",
+        "count": 13
+      }
+    ],
+    "Negative": [
+      {
+        "value": "Twitter",
+        "count": 3
+      },
+      {
+        "value": "Instagram",
+        "count": 1
+      }
+    ],
+    "Neutral": [
+      {
+        "value": "Instagram",
+        "count": 240
+      },
+      {
+        "value": "Twitter",
+        "count": 227
+      },
+      {
+        "value": "Facebook",
+        "count": 215
+      }
+    ]
+  }
+}
