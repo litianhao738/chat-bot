@@ -101,10 +101,32 @@ FEEDBACK_THEME_PRIORITY = {
     "returns and post-purchase handling": 4,
 }
 
+ANSI_ESCAPE_RE = re.compile(
+    r"""
+    \x1B
+    (?:
+        \[[0-?]*[ -/]*[@-~]
+        | \][^\x1B\x07]*(?:\x07|\x1B\\)
+        | [PX^_][^\x1B]*(?:\x1B\\)
+        | [@-_]
+    )
+    """,
+    re.VERBOSE,
+)
+CONTROL_CHAR_RE = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]")
+
 
 def normalize_spaces(text: str) -> str:
     text = str(text or "")
     text = re.sub(r"\s+", " ", text).strip()
+    return text
+
+
+def strip_terminal_control_sequences(text: str) -> str:
+    text = str(text or "")
+    text = text.replace("\r\n", "\n").replace("\r", "\n")
+    text = ANSI_ESCAPE_RE.sub("", text)
+    text = CONTROL_CHAR_RE.sub("", text)
     return text
 
 
@@ -684,7 +706,7 @@ def polish_answer_with_ollama(payload: Dict[str, object], model: str, timeout_se
     prompt = build_polish_prompt(payload)
     try:
         completed = subprocess.run(
-            [ollama_path, "run", model, prompt],
+            [ollama_path, "run", "--nowordwrap", model, prompt],
             capture_output=True,
             text=True,
             encoding="utf-8",
@@ -705,8 +727,8 @@ def polish_answer_with_ollama(payload: Dict[str, object], model: str, timeout_se
             "message": f"Failed to execute Ollama: {exc}",
         }
 
-    stdout = normalize_spaces(completed.stdout)
-    stderr = normalize_spaces(completed.stderr)
+    stdout = normalize_spaces(strip_terminal_control_sequences(completed.stdout))
+    stderr = normalize_spaces(strip_terminal_control_sequences(completed.stderr))
     if completed.returncode != 0:
         return {
             "used": False,
