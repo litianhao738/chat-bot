@@ -1,0 +1,34 @@
+{
+  "input_path": "data/raw/yc_detailed_data.repaired.v2.jsonl",
+  "n_companies": 5494,
+  "n_topics": 20,
+  "top_20_global_keywords": [
+    "agents",
+    "health",
+    "code",
+    "financial",
+    "sales",
+    "video",
+    "infrastructure",
+    "api",
+    "high",
+    "digital",
+    "manage",
+    "need",
+    "design",
+    "access",
+    "scale",
+    "care",
+    "open",
+    "models",
+    "payments",
+    "healthcare"
+  ],
+  "output_files": {
+    "cleaned_company_kb": "data/kb\\cleaned_company_kb.jsonl",
+    "company_keywords_csv": "data/kb\\company_keywords.csv",
+    "global_keywords_csv": "data/kb\\global_keywords.csv",
+    "topic_taxonomy_json": "data/kb\\topic_taxonomy.json",
+    "knowledge_base_chunks_jsonl": "data/kb\\knowledge_base_chunks.jsonl"
+  }
+}
