@@ -239,13 +239,13 @@ def stream_answer(
         resp.raise_for_status()
     except requests.exceptions.ConnectionError:
         yield (
-            "⚠️ Cannot connect to Ollama. "
+            "Warning: Cannot connect to Ollama. "
             "Make sure Ollama is running (`ollama serve`) and "
             f"the model `{model}` is pulled (`ollama pull {model}`)."
         )
         return
     except requests.exceptions.RequestException as exc:
-        yield f"⚠️ Ollama request failed: {exc}"
+        yield f"Warning: Ollama request failed: {exc}"
         return
 
     for raw_line in resp.iter_lines():
@@ -317,8 +317,10 @@ if __name__ == "__main__":
     from rag.retrieve import retrieve
 
     query = " ".join(sys.argv[1:]) or "How do I register a company in Hong Kong?"
-    print(f"Query: {query}\n{'─'*60}")
-    topic, matches, intent = retrieve(query)
+    print(f"Query: {query}\n{'-'*60}")
+    matches, intent = retrieve(query)
+    from rag.retrieve import infer_topic_label
+    topic = infer_topic_label(intent, matches)
     print(f"Topic: {topic}  |  Sources: {[m['metadata']['source_family'] for m in matches]}\n")
     print("Answer:\n")
     for chunk in stream_answer(query, matches, topic):

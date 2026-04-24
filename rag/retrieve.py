@@ -91,11 +91,6 @@ def detect_intent(query: str) -> Dict[str, object]:
     q = query.lower()
     tokens = _tokens(q)
 
-    print(f"\n--- Intent Detection Debug ---\n")
-    print(f"Query: {query}")
-    print(f"Tokens: {tokens}")
-    print(f"\n--- Intent Detection Debug ---\n")
-
     asks_hk       = "hong kong" in q or " hk " in f" {q} "
     asks_official = bool(tokens & frozenset(OFFICIAL_TERMS))
     asks_bg       = (

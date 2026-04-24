@@ -151,7 +151,7 @@ def label_from_score(score: float) -> str:
 def analyze_text(text: str, summary_path: str = DEFAULT_SUMMARY_PATH, keywords_path: str = DEFAULT_KEYWORDS_PATH) -> Dict[str, object]:
     if not os.path.exists(summary_path) or not os.path.exists(keywords_path):
         raise FileNotFoundError(
-            "Sentiment assets not found. Please run: python sentiment_assets/build_sentiment_assets.py"
+            "Sentiment assets not found. Please run: python sentiment/build_assets.py"
         )
 
     summary = load_json(summary_path)
