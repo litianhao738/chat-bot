@@ -1,0 +1,32 @@
+{
+  "input_files": {
+    "evaluation_results": "D:\\chat-bot-branch-yc-pro\\data\\evaluation\\evaluation_results.csv",
+    "topk_retrieval_samples": "D:\\chat-bot-branch-yc-pro\\data\\evaluation\\topk_retrieval_samples.csv",
+    "summary": "D:\\chat-bot-branch-yc-pro\\data\\evaluation\\summary.json"
+  },
+  "output_dir": "D:\\chat-bot-branch-yc-pro\\outputs\\obj3",
+  "generated_files": [
+    "manifest.json",
+    "recall_at_k_curve.png",
+    "relevant_rank_distribution.png",
+    "retrieval_metrics_table.png",
+    "retrieval_score_distribution.csv",
+    "search_relevance_histogram.png",
+    "source_recall_by_family.csv",
+    "source_recall_by_family.png",
+    "topk_retrieval_samples_table.png"
+  ],
+  "statistics": {
+    "test_queries": 96,
+    "source_recall_at_1": 0.9479166666666666,
+    "source_recall_at_3": 0.9791666666666666,
+    "source_recall_at_5": 0.9791666666666666,
+    "relevant_recall_at_1": 0.6944444444444444,
+    "relevant_recall_at_3": 0.8055555555555556,
+    "relevant_recall_at_5": 0.8194444444444444,
+    "source_mrr": 0.9601,
+    "relevant_mrr": 0.7465,
+    "relevant_ndcg_at_5": 0.7651,
+    "avg_latency_ms": 178.95
+  }
+}

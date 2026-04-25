@@ -1,0 +1,39 @@
+{
+  "events": 78,
+  "suggestions_shown": 63,
+  "suggestions_clicked": 15,
+  "overall_ctr": 0.23809523809523808,
+  "turns_with_suggestions": 21,
+  "turns_with_click": 15,
+  "turn_level_prediction_accuracy": 0.7142857142857143,
+  "ctr_by_rank": {
+    "1": {
+      "shown": 21,
+      "clicked": 7,
+      "ctr": 0.3333333333333333
+    },
+    "2": {
+      "shown": 21,
+      "clicked": 7,
+      "ctr": 0.3333333333333333
+    },
+    "3": {
+      "shown": 21,
+      "clicked": 1,
+      "ctr": 0.047619047619047616
+    }
+  },
+  "rank_choice_perplexity": 2.467856204312909,
+  "perplexity_note": "This is an empirical rank-choice perplexity proxy based on clicked suggestion ranks. True token-level model perplexity requires model log probabilities, which are not available from the current Ollama follow-up generation call.",
+  "input_log": "data\\analytics\\followup_events.jsonl",
+  "legacy_summary": "data\\analytics\\followup_summary.json",
+  "legacy_journeys": "data\\analytics\\followup_journeys.csv",
+  "outputs": {
+    "user_journey_sankey": "outputs/obj5/user_journey_sankey.png",
+    "prediction_accuracy_bar": "outputs/obj5/prediction_accuracy_bar.png",
+    "followup_metrics_table": "outputs/obj5/followup_metrics_table.png",
+    "ctr_by_topic": "outputs/obj5/ctr_by_topic.png",
+    "clicked_rank_distribution": "outputs/obj5/clicked_rank_distribution.png",
+    "journey_stage_edges": "outputs/obj5/journey_stage_edges.csv"
+  }
+}

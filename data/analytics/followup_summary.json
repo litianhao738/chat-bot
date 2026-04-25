@@ -1,23 +1,23 @@
 {
-  "events": 18,
-  "suggestions_shown": 15,
-  "suggestions_clicked": 3,
-  "ctr": 0.2,
+  "events": 78,
+  "suggestions_shown": 63,
+  "suggestions_clicked": 15,
+  "ctr": 0.23809523809523808,
   "ctr_by_rank": {
     "1": {
-      "shown": 5,
-      "clicked": 1,
-      "ctr": 0.2
+      "shown": 21,
+      "clicked": 7,
+      "ctr": 0.3333333333333333
     },
     "2": {
-      "shown": 5,
-      "clicked": 2,
-      "ctr": 0.4
+      "shown": 21,
+      "clicked": 7,
+      "ctr": 0.3333333333333333
     },
     "3": {
-      "shown": 5,
-      "clicked": 0,
-      "ctr": 0.0
+      "shown": 21,
+      "clicked": 1,
+      "ctr": 0.047619047619047616
     }
   },
   "log_path": "data\\analytics\\followup_events.jsonl"

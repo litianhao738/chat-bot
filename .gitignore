@@ -1,0 +1,7 @@
+.venv/
+.vscode/
+__pycache__/
+*.py[cod]
+*.zip
+*.patch
+data/analytics/*.before_*.jsonl

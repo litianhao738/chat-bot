@@ -1,5 +1,5 @@
 topic_group,precision,recall,f1,support
-business_operations,1.0,1.0,1.0,6
-hk_compliance,1.0,1.0,1.0,6
-social_sentiment,1.0,1.0,1.0,4
-startup_patterns,1.0,1.0,1.0,6
+business_operations,1.0,0.9167,0.9565,24
+hk_compliance,1.0,0.9583,0.9787,24
+social_sentiment,1.0,0.9167,0.9565,24
+startup_patterns,0.8276,1.0,0.9057,24

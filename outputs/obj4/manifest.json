@@ -1,0 +1,43 @@
+{
+  "input_files": {
+    "evaluation_results": "D:\\chat-bot-branch-yc-pro\\data\\evaluation\\evaluation_results.csv",
+    "topk_retrieval_samples": "D:\\chat-bot-branch-yc-pro\\data\\evaluation\\topk_retrieval_samples.csv",
+    "summary": "D:\\chat-bot-branch-yc-pro\\data\\evaluation\\summary.json"
+  },
+  "output_dir": "D:\\chat-bot-branch-yc-pro\\outputs\\obj4",
+  "generated_files": [
+    "answer_evaluation_summary_table.png",
+    "answer_length_comparison.png",
+    "answer_length_stats.csv",
+    "manifest.json",
+    "retrieved_vs_answer_full.csv",
+    "retrieved_vs_answer_table.png",
+    "rouge_by_topic_group.csv",
+    "rouge_by_topic_group.png",
+    "rouge_scores_bar.png",
+    "source_attribution_counts.csv",
+    "source_attribution_pie.png"
+  ],
+  "statistics": {
+    "answer_metric_mode": "generated_answer",
+    "test_queries": 96,
+    "generated_answers": 96,
+    "rouge_1": 0.1209,
+    "rouge_2": 0.0238,
+    "rouge_l": 0.0878,
+    "source_families": [
+      {
+        "source_family": "business_guide",
+        "count": 70
+      },
+      {
+        "source_family": "hk_official",
+        "count": 69
+      },
+      {
+        "source_family": "yc",
+        "count": 149
+      }
+    ]
+  }
+}

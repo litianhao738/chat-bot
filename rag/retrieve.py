@@ -58,29 +58,40 @@ def _tokens(text: str) -> frozenset:
 # ── intent term sets (module-level, built once) ───────────────────────────────
 
 _EXAMPLE_TOKENS: frozenset = frozenset({
-    "example", "examples", "similar", "benchmark", "compare", "yc", "pattern",
+    "example", "examples", "similar", "benchmark", "yc", "pattern",
 })
 
 # Single-word sentiment tokens — can be matched against the token set
 _OFFICIAL_PHRASES: frozenset = frozenset({
     "annual return",
+    "brns",
     "business registration",
     "change a hong kong company name",
     "change company name",
+    "company particulars",
     "company information",
     "company name",
+    "cr number",
+    "cr numbers",
     "defunct solvent company",
     "deregister",
     "deregistration",
     "e-services",
+    "e-search",
+    "former company number",
     "obtain company information",
+    "rename",
     "unique business identifier",
+    "ubi",
 })
 
 _SENTIMENT_TOKENS: frozenset = frozenset({
     "complaint", "complaints", "feedback", "review", "reviews",
     "sentiment", "reaction", "comment", "comments", "complain",
-    "twitter", "instagram",
+    "complaining", "rating", "ratings", "opinions", "reactions",
+    "twitter", "instagram", "facebook", "reddit", "buzz",
+    "praised", "praise", "criticized", "criticism", "frustration",
+    "praising", "criticizing", "satisfaction",
 })
 
 # Multi-word sentiment phrases — must be matched as substrings in the full query
@@ -92,8 +103,18 @@ _SENTIMENT_PHRASES: frozenset = frozenset({
     "customer feedback",
     "user feedback",
     "online reviews",
+    "user reviews",
+    "customer reviews",
     "what do users think",
     "public reaction",
+    "customer complaints",
+    "negative feedback",
+    "positive feedback",
+    "market sentiment",
+    "social sentiment",
+    "brand sentiment",
+    "word of mouth",
+    "customer satisfaction",
 })
 
 
@@ -116,10 +137,11 @@ def detect_intent(query: str) -> Dict[str, object]:
         or any(p in q for p in BUSINESS_GUIDE_PHRASES)
     )
     asks_examples  = bool(tokens & _EXAMPLE_TOKENS)
-    asks_sentiment = (
+    raw_asks_sentiment = (
         bool(tokens & _SENTIMENT_TOKENS)
         or any(p in q for p in _SENTIMENT_PHRASES)
     )
+    asks_sentiment = raw_asks_sentiment and not asks_examples
 
     preferred: List[str] = []
     if asks_official:
@@ -150,6 +172,8 @@ def infer_topic_label(intent: Dict[str, object], matches: List[Dict]) -> str:
         return "HK Company Registration & Compliance"
     if intent.get("asks_business_guide"):
         return "Business Operations & Planning"
+    if intent.get("asks_examples"):
+        return "Startup / YC Patterns"
     if intent.get("asks_sentiment"):
         return "Social Media Sentiment"
 

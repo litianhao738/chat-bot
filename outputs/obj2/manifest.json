@@ -1,0 +1,29 @@
+{
+  "input_files": {
+    "classification_report": "D:\\chat-bot-branch-yc-pro\\data\\evaluation\\classification_report.csv",
+    "confusion_matrix": "D:\\chat-bot-branch-yc-pro\\data\\evaluation\\confusion_matrix.csv",
+    "evaluation_results": "D:\\chat-bot-branch-yc-pro\\data\\evaluation\\evaluation_results.csv",
+    "summary": "D:\\chat-bot-branch-yc-pro\\data\\evaluation\\summary.json"
+  },
+  "output_dir": "D:\\chat-bot-branch-yc-pro\\outputs\\obj2",
+  "generated_files": [
+    "classification_report_table.png",
+    "confusion_matrix_counts.png",
+    "confusion_matrix_normalized.png",
+    "manifest.json",
+    "objective2_statistics_table.png",
+    "query_tsne_topic_map.png",
+    "topic_distribution.png",
+    "topic_metrics_bar.png",
+    "topic_misclassification_cases.csv"
+  ],
+  "statistics": {
+    "test_queries": 96,
+    "correct_topic_predictions": 91,
+    "topic_accuracy": 0.9479166666666666,
+    "topic_weighted_f1": 0.9494,
+    "cohens_kappa": 0.9305555555555556,
+    "topic_groups": 4,
+    "misclassification_cases": 5
+  }
+}

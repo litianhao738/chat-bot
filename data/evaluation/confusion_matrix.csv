@@ -1,5 +1,5 @@
 expected,business_operations,hk_compliance,social_sentiment,startup_patterns
-business_operations,6,0,0,0
-hk_compliance,0,6,0,0
-social_sentiment,0,0,4,0
-startup_patterns,0,0,0,6
+business_operations,22,0,0,2
+hk_compliance,0,23,0,1
+social_sentiment,0,0,22,2
+startup_patterns,0,0,0,24

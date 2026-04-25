@@ -1,0 +1,97 @@
+query,answer_len,gold_len,compression_ratio
+How do I register a new company in Hong Kong?,68,24,0.35294117647058826
+What is the BRN mapping after Hong Kong adopted the Unique Business Identifier?,75,21,0.28
+What annual return does a local private company need to file in Hong Kong?,84,22,0.2619047619047619
+How can I deregister a defunct solvent company in Hong Kong?,80,19,0.2375
+How do I change a Hong Kong company name?,81,17,0.20987654320987653
+Where can I obtain Hong Kong company information from the registry?,72,12,0.16666666666666666
+Which official portal should I use for Hong Kong company e-services?,47,21,0.44680851063829785
+What compliance obligations should I check after incorporating a Hong Kong private company?,75,15,0.2
+Can I look up a former company number after UBI implementation?,50,11,0.22
+What are the filing risks if a company submits an annual return late?,78,20,0.2564102564102564
+How should a founder confirm whether a Hong Kong company name can be changed?,84,9,0.10714285714285714
+What official source explains incorporation FAQs for a local Hong Kong company?,39,12,0.3076923076923077
+What should I plan before opening a retail store?,82,15,0.18292682926829268
+How should a retailer manage inventory and supply chain?,68,15,0.22058823529411764
+How do I write a business plan before launching a company?,72,16,0.2222222222222222
+How do I choose a target market for a small business?,71,14,0.19718309859154928
+What pricing and competition questions should a new store ask?,75,18,0.24
+What operational risks should a retail founder watch in supply chain?,70,15,0.21428571428571427
+How can a new retailer forecast demand before buying inventory?,71,15,0.2112676056338028
+What should a store owner consider when selecting suppliers and vendors?,61,12,0.19672131147540983
+How do I decide whether an online store or physical retail location is better?,73,14,0.1917808219178082
+What should be included in a go-to-market plan for a first-time founder?,69,13,0.18840579710144928
+How do I estimate staffing needs before opening a small shop?,59,14,0.23728813559322035
+How can I reduce supply chain delays for a growing retail business?,67,15,0.22388059701492538
+Show me YC examples of companies in payments or credit.,73,18,0.2465753424657534
+Which YC companies are building healthcare or patient-care products?,62,17,0.27419354838709675
+Find YC examples in education or student learning.,70,13,0.18571428571428572
+What YC patterns appear in developer tools or APIs?,72,14,0.19444444444444445
+Which YC startups focus on marketplaces or commerce?,55,14,0.2545454545454545
+"Give YC examples for sales, CRM, or marketing automation.",63,13,0.20634920634920634
+What YC examples are relevant for AI agents and workflow automation?,72,12,0.16666666666666666
+"Find YC companies working on video, audio, or streaming tools.",71,13,0.18309859154929578
+What patterns do YC fintech startups show around investors and capital?,69,11,0.15942028985507245
+Which YC startups are tackling food delivery or restaurants?,73,13,0.1780821917808219
+Give me examples of YC startups in security or cloud infrastructure.,68,10,0.14705882352941177
+Which YC companies work on machine learning models or training infrastructure?,70,14,0.2
+What is the overall social media sentiment in the dataset?,62,18,0.2903225806451613
+What are people saying on Twitter and Instagram in the sentiment dataset?,53,17,0.32075471698113206
+Are online reviews or social media comments mostly positive or negative?,70,18,0.2571428571428571
+Which hashtags are associated with positive social media sentiment?,70,15,0.21428571428571427
+What negative feedback do users give about delivery delays?,56,13,0.23214285714285715
+Do customer complaints show frustration about online retail service?,70,11,0.15714285714285714
+What do users think about fintech app onboarding?,71,14,0.19718309859154928
+Summarize public reaction to a new food delivery feature.,51,13,0.2549019607843137
+Are Facebook comments more positive than Twitter comments?,72,14,0.19444444444444445
+What customer reviews suggest low satisfaction with checkout?,71,12,0.16901408450704225
+Is there brand sentiment around AI tutoring tools?,68,9,0.1323529411764706
+What word-of-mouth buzz appears around wellness apps?,56,12,0.21428571428571427
+Where does the Companies Registry explain the e-Services FAQ for online filings?,51,14,0.27450980392156865
+Which Companies Registry page covers business registration and miscellaneous questions?,62,14,0.22580645161290322
+What official guidance mentions the Companies Registry Trust and Company Service Provider registry?,71,16,0.22535211267605634
+How can I use official e-search services to map CR numbers and BRNs?,59,13,0.22033898305084745
+What should I check before using electronic incorporation services in Hong Kong?,67,13,0.19402985074626866
+Where can I find official local company incorporation FAQ details?,51,9,0.17647058823529413
+How can I verify a potential supplier's company background before signing a contract?,66,9,0.13636363636363635
+How should a Hong Kong founder handle company maintenance after incorporation?,68,10,0.14705882352941177
+Which official page explains deregistration for a company that has stopped trading?,56,13,0.23214285714285715
+What should I do if my startup needs to rename its Hong Kong company before launch?,82,8,0.0975609756097561
+How can a founder confirm the official registration path for a new local company?,81,9,0.1111111111111111
+What Companies Registry compliance source should a private company check every year?,75,11,0.14666666666666667
+How should a retailer balance fast delivery with inventory cost?,67,15,0.22388059701492538
+What store launch checklist should I use before signing a lease?,75,14,0.18666666666666668
+How should I validate a business idea before spending money on inventory?,73,12,0.1643835616438356
+What supply chain metrics should a retail founder monitor?,62,15,0.24193548387096775
+How should I compare competitor pricing before opening a neighborhood store?,74,12,0.16216216216216217
+What should I write down before turning my side project into a real company?,66,13,0.19696969696969696
+How can retailers avoid stockouts during seasonal demand spikes?,66,13,0.19696969696969696
+What customer segment research should I do before choosing products?,72,13,0.18055555555555555
+"How do I plan vendors, fulfillment, and warehouse operations for retail?",71,14,0.19718309859154928
+What practical steps help a small store prepare for opening day?,76,8,0.10526315789473684
+How should I decide who will buy my product and how I will reach them?,74,9,0.12162162162162163
+What operations tradeoffs matter when scaling a retail supply chain?,69,13,0.18840579710144928
+"Find YC examples in media, content, or social networks.",73,14,0.1917808219178082
+"Which YC startups work on therapeutics, cancer, or drug discovery?",58,13,0.22413793103448276
+Show YC examples in health insurance or mental health care.,73,14,0.1917808219178082
+"Which YC startups combine hardware engineering, chips, or protein design?",78,13,0.16666666666666666
+"Find YC examples in games, gaming, or multiplayer play.",50,13,0.26
+"What YC startups are working on energy, robotics, carbon, or space?",66,15,0.22727272727272727
+"Give YC examples involving code review, tests, or internal developer workflows.",75,15,0.2
+"Which YC startups are about email, web sharing, or information access?",71,14,0.19718309859154928
+"Find YC companies building social media, music, or creator communities.",70,7,0.1
+Show me companies reducing industrial costs with automation or physical systems.,67,15,0.22388059701492538
+Which YC startups show patterns in AI model training and data labeling?,70,13,0.18571428571428572
+"Find YC examples of B2B outreach, leads, and outbound sales tools.",73,12,0.1643835616438356
+What are Twitter users complaining about in the sentiment dataset?,70,10,0.14285714285714285
+Do people seem happy with lifestyle content on Instagram?,77,12,0.15584415584415584
+How do Facebook reactions compare for neutral versus positive posts?,62,11,0.1774193548387097
+What online reviews mention frustration with checkout or payment?,75,11,0.14666666666666667
+Are customer ratings mostly neutral in the social media dataset?,71,12,0.16901408450704225
+How are people responding to education technology products?,66,9,0.13636363636363635
+Which user feedback terms point to negative app experiences?,66,12,0.18181818181818182
+What market sentiment is visible for small business retail ideas?,69,9,0.13043478260869565
+What are Reddit-style comments saying about delivery reliability?,69,10,0.14492753623188406
+Are people praising wellness apps or criticizing them?,73,10,0.136986301369863
+Are people happy or unhappy with healthcare appointment apps?,74,9,0.12162162162162163
+Are creator tools getting good word of mouth?,73,10,0.136986301369863

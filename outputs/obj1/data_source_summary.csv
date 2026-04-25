@@ -1,0 +1,5 @@
+Source,Documents,Total Tokens,Avg Tokens/Doc,Update Frequency
+YC,5441,370672,68.13,Snapshot / manual refresh
+HK Registry,54,10130,187.59,Official guidance update
+Business Guides,33,5811,176.09,Manual / periodic refresh
+Social Media,732,19369,26.46,Dataset snapshot

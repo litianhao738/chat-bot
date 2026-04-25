@@ -5,3 +5,7 @@ requests
 scikit-learn
 vaderSentiment
 pandas
+numpy
+matplotlib
+plotly
+kaleido

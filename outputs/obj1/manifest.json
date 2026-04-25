@@ -1,0 +1,34 @@
+{
+  "output_dir": "D:\\chat-bot-branch-yc-pro\\outputs\\obj1",
+  "generated_files": [
+    "business_guides_top20_tfidf.png",
+    "data_source_summary.csv",
+    "data_source_summary.png",
+    "essential_statistics.csv",
+    "essential_statistics.png",
+    "hk_registry_top20_tfidf.png",
+    "knowledge_base_sunburst.html",
+    "knowledge_base_sunburst.png",
+    "social_media_top20_tfidf.png",
+    "sunburst_source_data.csv",
+    "yc_top20_tfidf.png"
+  ],
+  "domains_processed": {
+    "yc": {
+      "rows": 5494,
+      "bar_chart": "D:\\chat-bot-branch-yc-pro\\outputs\\obj1\\yc_top20_tfidf.png"
+    },
+    "hk_registry": {
+      "rows": 54,
+      "bar_chart": "D:\\chat-bot-branch-yc-pro\\outputs\\obj1\\hk_registry_top20_tfidf.png"
+    },
+    "business_guides": {
+      "rows": 33,
+      "bar_chart": "D:\\chat-bot-branch-yc-pro\\outputs\\obj1\\business_guides_top20_tfidf.png"
+    },
+    "social_media": {
+      "rows": 732,
+      "bar_chart": "D:\\chat-bot-branch-yc-pro\\outputs\\obj1\\social_media_top20_tfidf.png"
+    }
+  }
+}

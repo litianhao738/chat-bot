@@ -1,23 +1,25 @@
 {
-  "test_query_count": 22,
+  "test_query_count": 96,
   "answer_metric_mode": "generated_answer",
-  "topic_accuracy": 1.0,
-  "topic_weighted_f1": 1.0,
-  "source_recall_at_1": 1.0,
-  "source_recall_at_3": 1.0,
-  "source_recall_at_5": 1.0,
-  "relevant_recall_at_1": 0.8333,
-  "relevant_recall_at_3": 0.9444,
-  "relevant_recall_at_5": 0.9444,
-  "source_mrr": 1.0,
-  "relevant_mrr": 0.8889,
-  "relevant_ndcg_at_5": 0.9034,
-  "rouge_1": 0.1446,
-  "rouge_2": 0.0406,
-  "rouge_l": 0.1104,
-  "avg_latency_ms": 605.32,
+  "topic_accuracy": 0.9479,
+  "topic_weighted_f1": 0.9494,
+  "source_recall_at_1": 0.9479,
+  "source_recall_at_3": 0.9792,
+  "source_recall_at_5": 0.9792,
+  "relevant_recall_at_1": 0.6944,
+  "relevant_recall_at_3": 0.8056,
+  "relevant_recall_at_5": 0.8194,
+  "source_mrr": 0.9601,
+  "relevant_mrr": 0.7465,
+  "relevant_ndcg_at_5": 0.7651,
+  "rouge_1": 0.1209,
+  "rouge_2": 0.0238,
+  "rouge_l": 0.0878,
+  "avg_latency_ms": 174.95,
+  "sentiment_trigger_accuracy": 0.9688,
+  "sentiment_expected_trigger_rate": 0.875,
   "answer_mode_counts": {
-    "generated_answer": 22
+    "generated_answer": 96
   },
-  "generated_at": "2026-04-25 13:57:31"
+  "generated_at": "2026-04-25 19:43:38"
 }

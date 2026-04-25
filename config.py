@@ -60,7 +60,8 @@ BUSINESS_GUIDE_PHRASES = {
     "how to start a business", "start a business",
     "open a retail store", "target customer", "target market",
     "market research", "business plan", "go to market",
-    "pricing strategy",
+    "pricing strategy", "startup plan", "first-time founder",
+    "stockouts", "seasonal demand", "demand spikes",
 }
 
 # Source-family boost: (source_family, intent_flag) → additive score boost

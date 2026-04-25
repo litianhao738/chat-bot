@@ -37,6 +37,7 @@ SENTIMENT_QUERY_TERMS = {
     "social media", "twitter", "instagram", "facebook", "reddit", "buzz", "word of mouth", "complain",
     "complaining",
     "praised", "praise", "criticized", "criticism", "negative feedback", "positive feedback", "frustration",
+    "praising", "criticizing",
     "customer satisfaction", "what are people saying", "what do users think",
 }
 

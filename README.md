@@ -69,6 +69,10 @@ Main dependencies:
 - `sentence-transformers`
 - `scikit-learn`
 - `pandas`
+- `numpy`
+- `matplotlib`
+- `plotly`
+- `kaleido`
 - `requests`
 - `vaderSentiment`
 
@@ -342,6 +346,30 @@ data/analytics/followup_events.jsonl
 data/analytics/followup_summary.json
 data/analytics/followup_journeys.csv
 ```
+
+### `evaluation/`, `outputs/`, and `docs/`
+
+Offline evaluation scripts and generated chart evidence for Objectives 1-5.
+
+Important files:
+
+```text
+evaluation/run_evaluation.py
+evaluation/generate_obj1_figures.py
+evaluation/generate_obj2_figures.py
+evaluation/generate_obj3_figures.py
+evaluation/generate_obj4_figures.py
+evaluation/generate_obj5_figures.py
+evaluation/seed_obj5_followup_events.py
+outputs/obj1/
+outputs/obj2/
+outputs/obj3/
+outputs/obj4/
+outputs/obj5/
+docs/OBJECTIVES_1_6_CHART_EXPLANATION.md
+```
+
+`docs/OBJECTIVES_1_6_CHART_EXPLANATION.md` explains what each Objective 1-5 chart means and which Objective 6 dashboard modules have been implemented.
 
 ## 8. Troubleshooting
 

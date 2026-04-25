@@ -1,0 +1,11 @@
+source_stage,target_stage,count
+Start,Registering a Business,6
+Start,Operations Planning,6
+Registering a Business,Registering a Business,5
+Start,Seeking Funding,4
+Start,Market Sentiment,4
+Operations Planning,Operations Planning,3
+Seeking Funding,Seeking Funding,3
+Market Sentiment,Market Sentiment,3
+Start,Idea Validation,1
+Idea Validation,Idea Validation,1

@@ -24,6 +24,11 @@ sys.path.insert(0, str(ROOT))
 
 from rag.retrieve import infer_topic_label, retrieve
 
+try:
+    from sentiment.engine import should_analyze_sentiment
+except Exception:
+    should_analyze_sentiment = None
+
 TEST_SET_PATH = ROOT / "evaluation" / "test_queries.csv"
 OUTPUT_DIR = ROOT / "data" / "evaluation"
 
@@ -218,6 +223,7 @@ def summarize_classification(rows: list[dict[str, Any]]) -> tuple[dict[str, Any]
 def build_summary(rows: list[dict[str, Any]], class_summary: dict[str, Any], answer_mode: str) -> dict[str, Any]:
     source_rows = [row for row in rows if row.get("expected_source_family")]
     relevant_rows = [row for row in rows if row.get("relevant_id")]
+    sentiment_expected_rows = [row for row in rows if row.get("expected_sentiment_trigger")]
 
     def recall_at(rows_to_score: list[dict[str, Any]], rank_key: str, k: int) -> float:
         if not rows_to_score:
@@ -242,6 +248,14 @@ def build_summary(rows: list[dict[str, Any]], class_summary: dict[str, Any], ans
         "rouge_2": round(sum(row["rouge_2"] for row in rows) / len(rows), 4) if rows else 0.0,
         "rouge_l": round(sum(row["rouge_l"] for row in rows) / len(rows), 4) if rows else 0.0,
         "avg_latency_ms": round(sum(row["latency_ms"] for row in rows) / len(rows), 2) if rows else 0.0,
+        "sentiment_trigger_accuracy": round(
+            sum(1 for row in rows if row.get("sentiment_trigger_correct")) / len(rows),
+            4,
+        ) if rows else 0.0,
+        "sentiment_expected_trigger_rate": round(
+            sum(1 for row in sentiment_expected_rows if row.get("sentiment_engine_triggered")) / len(sentiment_expected_rows),
+            4,
+        ) if sentiment_expected_rows else 0.0,
     }
     return summary
 
@@ -268,6 +282,16 @@ def main() -> None:
         topic_label = infer_topic_label(intent, matches)
         predicted_topic_group = classify_topic_group(topic_label, intent)
         expected_topic_group = row["expected_topic_group"]
+        expected_sentiment_trigger = normalize_text(row.get("expected_sentiment_trigger")) in {"1", "true", "yes", "y"}
+        if should_analyze_sentiment is not None:
+            sentiment_trigger = should_analyze_sentiment(query)
+            sentiment_engine_would_trigger = bool(sentiment_trigger.get("should_run"))
+            sentiment_engine_triggered = bool(intent.get("asks_sentiment")) and sentiment_engine_would_trigger
+            sentiment_trigger_reason = str(sentiment_trigger.get("reason", ""))
+        else:
+            sentiment_engine_would_trigger = False
+            sentiment_engine_triggered = False
+            sentiment_trigger_reason = "sentiment engine unavailable"
 
         source_rank = find_source_rank(matches, row["expected_source_family"], intent)
         relevant_rank = find_relevant_rank(matches, row.get("relevant_id", ""))
@@ -280,6 +304,11 @@ def main() -> None:
             "predicted_topic_group": predicted_topic_group,
             "predicted_topic_label": topic_label,
             "topic_correct": expected_topic_group == predicted_topic_group,
+            "expected_sentiment_trigger": expected_sentiment_trigger,
+            "sentiment_engine_triggered": sentiment_engine_triggered,
+            "sentiment_engine_would_trigger": sentiment_engine_would_trigger,
+            "sentiment_trigger_correct": expected_sentiment_trigger == sentiment_engine_triggered,
+            "sentiment_trigger_reason": sentiment_trigger_reason,
             "expected_source_family": row["expected_source_family"],
             "source_rank": source_rank or "",
             "source_rr": reciprocal_rank(source_rank),
