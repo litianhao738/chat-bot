@@ -412,7 +412,7 @@ data/analytics/followup_summary.json
 data/analytics/followup_journeys.csv
 ```
 
-### `evaluation/`, `outputs/`, and `docs/`
+### `evaluation/` and `outputs/`
 
 Offline evaluation scripts and generated chart evidence for Objectives 1-5.
 
@@ -431,10 +431,7 @@ outputs/obj2/
 outputs/obj3/
 outputs/obj4/
 outputs/obj5/
-docs/OBJECTIVES_1_6_CHART_EXPLANATION.md
 ```
-
-`docs/OBJECTIVES_1_6_CHART_EXPLANATION.md` explains what each Objective 1-5 chart means and which Objective 6 dashboard modules have been implemented.
 
 ## 8. Troubleshooting
 
