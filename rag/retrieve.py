@@ -62,6 +62,21 @@ _EXAMPLE_TOKENS: frozenset = frozenset({
 })
 
 # Single-word sentiment tokens — can be matched against the token set
+_OFFICIAL_PHRASES: frozenset = frozenset({
+    "annual return",
+    "business registration",
+    "change a hong kong company name",
+    "change company name",
+    "company information",
+    "company name",
+    "defunct solvent company",
+    "deregister",
+    "deregistration",
+    "e-services",
+    "obtain company information",
+    "unique business identifier",
+})
+
 _SENTIMENT_TOKENS: frozenset = frozenset({
     "complaint", "complaints", "feedback", "review", "reviews",
     "sentiment", "reaction", "comment", "comments", "complain",
@@ -92,7 +107,10 @@ def detect_intent(query: str) -> Dict[str, object]:
     tokens = _tokens(q)
 
     asks_hk       = "hong kong" in q or " hk " in f" {q} "
-    asks_official = bool(tokens & frozenset(OFFICIAL_TERMS))
+    asks_official = (
+        bool(tokens & frozenset(OFFICIAL_TERMS))
+        or any(p in q for p in _OFFICIAL_PHRASES)
+    )
     asks_bg       = (
         bool(tokens & frozenset(BUSINESS_GUIDE_TERMS))
         or any(p in q for p in BUSINESS_GUIDE_PHRASES)

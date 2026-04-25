@@ -1,0 +1,5 @@
+topic_group,precision,recall,f1,support
+business_operations,1.0,1.0,1.0,6
+hk_compliance,1.0,1.0,1.0,6
+social_sentiment,1.0,1.0,1.0,4
+startup_patterns,1.0,1.0,1.0,6

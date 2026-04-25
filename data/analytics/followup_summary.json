@@ -1,0 +1,24 @@
+{
+  "events": 18,
+  "suggestions_shown": 15,
+  "suggestions_clicked": 3,
+  "ctr": 0.2,
+  "ctr_by_rank": {
+    "1": {
+      "shown": 5,
+      "clicked": 1,
+      "ctr": 0.2
+    },
+    "2": {
+      "shown": 5,
+      "clicked": 2,
+      "ctr": 0.4
+    },
+    "3": {
+      "shown": 5,
+      "clicked": 0,
+      "ctr": 0.0
+    }
+  },
+  "log_path": "data\\analytics\\followup_events.jsonl"
+}

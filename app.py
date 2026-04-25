@@ -11,7 +11,9 @@ from __future__ import annotations
 import json
 import os
 import sys
+import uuid
 from collections import Counter
+from datetime import datetime, timezone
 from functools import lru_cache
 from pathlib import Path
 from textwrap import fill
@@ -41,6 +43,11 @@ from rag.retrieve import infer_topic_label, retrieve
 
 PROJECT_SUMMARY_PATH = KB_DIR / "summary.json"
 CLEANED_COMPANY_KB_PATH = KB_DIR / "cleaned_company_kb.jsonl"
+EVALUATION_SUMMARY_PATH = ROOT / "data" / "evaluation" / "summary.json"
+EVALUATION_REPORT_PATH = ROOT / "data" / "evaluation" / "classification_report.csv"
+EVALUATION_SAMPLES_PATH = ROOT / "data" / "evaluation" / "topk_retrieval_samples.csv"
+ANALYTICS_DIR = ROOT / "data" / "analytics"
+FOLLOWUP_LOG_PATH = ANALYTICS_DIR / "followup_events.jsonl"
 
 
 def _sentiment_assets_ready() -> bool:
@@ -97,6 +104,39 @@ def _load_optional_json(path: str | Path) -> dict[str, Any]:
         return json.load(fh)
 
 
+def _append_jsonl(path: Path, payload: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, "a", encoding="utf-8") as fh:
+        fh.write(json.dumps(payload, ensure_ascii=False) + "\n")
+
+
+def _now_iso() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+
+def log_followup_event(
+    event_type: str,
+    turn_id: str,
+    query: str,
+    followup_text: str,
+    followup_rank: int,
+    topic: str = "",
+) -> None:
+    _append_jsonl(
+        FOLLOWUP_LOG_PATH,
+        {
+            "timestamp": _now_iso(),
+            "session_id": st.session_state.get("session_id", ""),
+            "event_type": event_type,
+            "turn_id": turn_id,
+            "query": query,
+            "followup_text": followup_text,
+            "followup_rank": followup_rank,
+            "topic": topic,
+        },
+    )
+
+
 @lru_cache(maxsize=None)
 def _load_jsonl_rows(path_text: str) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
@@ -104,6 +144,18 @@ def _load_jsonl_rows(path_text: str) -> list[dict[str, Any]]:
     if not p.exists():
         return rows
     with open(p, "r", encoding="utf-8") as fh:
+        for line in fh:
+            line = line.strip()
+            if line:
+                rows.append(json.loads(line))
+    return rows
+
+
+def _load_uncached_jsonl_rows(path: Path) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    if not path.exists():
+        return rows
+    with open(path, "r", encoding="utf-8") as fh:
         for line in fh:
             line = line.strip()
             if line:
@@ -220,6 +272,82 @@ def build_session_retrieval_mix_frame(chat_history: list[dict[str, Any]]):
     if frame.empty:
         return frame
     return frame.sort_values("count", ascending=False).set_index("source_family")
+
+
+def build_followup_summary() -> dict[str, Any]:
+    rows = _load_uncached_jsonl_rows(FOLLOWUP_LOG_PATH)
+    shown = [row for row in rows if row.get("event_type") == "shown"]
+    clicked = [row for row in rows if row.get("event_type") == "clicked"]
+    shown_keys = {
+        (row.get("turn_id"), row.get("followup_rank"), row.get("followup_text"))
+        for row in shown
+    }
+    clicked_keys = {
+        (row.get("turn_id"), row.get("followup_rank"), row.get("followup_text"))
+        for row in clicked
+    }
+    shown_count = len(shown_keys)
+    clicked_count = len(clicked_keys)
+    return {
+        "shown": shown_count,
+        "clicked": clicked_count,
+        "ctr": clicked_count / shown_count if shown_count else 0.0,
+        "events": len(rows),
+    }
+
+
+def build_followup_rank_frame():
+    if pd is None:
+        return None
+    rows = _load_uncached_jsonl_rows(FOLLOWUP_LOG_PATH)
+    if not rows:
+        return _empty_frame()
+    frame = pd.DataFrame(rows)
+    if "followup_rank" not in frame or "event_type" not in frame:
+        return _empty_frame()
+    frame["followup_rank"] = pd.to_numeric(frame["followup_rank"], errors="coerce").fillna(0).astype(int)
+    grouped = (
+        frame.groupby(["followup_rank", "event_type"])
+        .size()
+        .unstack(fill_value=0)
+        .reset_index()
+        .sort_values("followup_rank")
+    )
+    if "shown" not in grouped:
+        grouped["shown"] = 0
+    if "clicked" not in grouped:
+        grouped["clicked"] = 0
+    grouped["ctr"] = grouped.apply(
+        lambda row: float(row["clicked"]) / float(row["shown"]) if row["shown"] else 0.0,
+        axis=1,
+    )
+    grouped["rank_label"] = grouped["followup_rank"].apply(lambda value: f"Suggestion {int(value)}")
+    return grouped
+
+
+def build_followup_journey_frame(limit: int = 10):
+    if pd is None:
+        return None
+    clicked = [
+        row for row in _load_uncached_jsonl_rows(FOLLOWUP_LOG_PATH)
+        if row.get("event_type") == "clicked"
+    ]
+    if not clicked:
+        return _empty_frame()
+    counts = Counter(
+        (
+            str(row.get("query", "")).strip()[:80],
+            str(row.get("followup_text", "")).strip()[:80],
+        )
+        for row in clicked
+    )
+    frame = pd.DataFrame(
+        [
+            {"from_query": source, "to_followup": target, "clicks": count}
+            for (source, target), count in counts.most_common(limit)
+        ]
+    )
+    return frame
 
 
 def render_horizontal_bar_chart(frame, label_column: str, value_column: str, color: str, height: int = 340) -> None:
@@ -368,6 +496,106 @@ def render_overview_metrics() -> None:
     metric_columns[4].metric("Chat Turns", len(st.session_state.history))
 
 
+def render_evaluation_results() -> None:
+    summary = _load_optional_json(EVALUATION_SUMMARY_PATH)
+    if not summary:
+        st.markdown("**Evaluation Results**")
+        st.info("Run `python evaluation/run_evaluation.py` to generate offline evaluation metrics.")
+        return
+
+    st.markdown("**Evaluation Results**")
+    st.caption(
+        "Offline checks from `evaluation/test_queries.csv`: topic routing, retrieval ranking, "
+        "answer support, and response latency."
+    )
+
+    cols = st.columns(5)
+    cols[0].metric("Topic Accuracy", f"{summary.get('topic_accuracy', 0):.1%}")
+    cols[1].metric("Weighted F1", f"{summary.get('topic_weighted_f1', 0):.1%}")
+    cols[2].metric("Recall@5", f"{summary.get('relevant_recall_at_5', 0):.1%}")
+    cols[3].metric("MRR", f"{summary.get('relevant_mrr', 0):.3f}")
+    cols[4].metric("Avg Latency", f"{summary.get('avg_latency_ms', 0):.0f} ms")
+
+    metric_rows = [
+        {"metric": "Source Recall@1", "value": summary.get("source_recall_at_1", 0)},
+        {"metric": "Source Recall@3", "value": summary.get("source_recall_at_3", 0)},
+        {"metric": "Source Recall@5", "value": summary.get("source_recall_at_5", 0)},
+        {"metric": "Relevant Recall@1", "value": summary.get("relevant_recall_at_1", 0)},
+        {"metric": "Relevant Recall@3", "value": summary.get("relevant_recall_at_3", 0)},
+        {"metric": "Relevant Recall@5", "value": summary.get("relevant_recall_at_5", 0)},
+        {"metric": "ROUGE-1 / Coverage", "value": summary.get("rouge_1", 0)},
+        {"metric": "ROUGE-L / Coverage", "value": summary.get("rouge_l", 0)},
+    ]
+    if pd is not None:
+        eval_frame = pd.DataFrame(metric_rows)
+        chart_spec = {
+            "data": {"values": eval_frame.to_dict(orient="records")},
+            "mark": {"type": "bar", "cornerRadiusEnd": 4},
+            "encoding": {
+                "y": {"field": "metric", "type": "nominal", "sort": "-x", "axis": {"title": None}},
+                "x": {"field": "value", "type": "quantitative", "axis": {"format": "%", "title": None}},
+                "color": {"value": "#2b6cb0"},
+                "tooltip": [
+                    {"field": "metric", "type": "nominal"},
+                    {"field": "value", "type": "quantitative", "format": ".2%"},
+                ],
+            },
+            "height": 280,
+        }
+        st.vega_lite_chart(chart_spec, use_container_width=True)
+
+        if EVALUATION_REPORT_PATH.exists():
+            report_frame = pd.read_csv(EVALUATION_REPORT_PATH)
+            st.dataframe(report_frame, use_container_width=True)
+
+        if EVALUATION_SAMPLES_PATH.exists():
+            with st.expander("Top-K retrieval samples", expanded=False):
+                samples = pd.read_csv(EVALUATION_SAMPLES_PATH).head(8)
+                st.dataframe(samples, use_container_width=True)
+
+
+def render_followup_analytics() -> None:
+    st.markdown("**Follow-Up Prediction Analytics**")
+    summary = build_followup_summary()
+    cols = st.columns(4)
+    cols[0].metric("Suggestions Shown", int(summary["shown"]))
+    cols[1].metric("Suggestions Clicked", int(summary["clicked"]))
+    cols[2].metric("Follow-Up CTR", f"{summary['ctr']:.1%}")
+    cols[3].metric("Logged Events", int(summary["events"]))
+
+    rank_frame = build_followup_rank_frame()
+    journey_frame = build_followup_journey_frame(limit=10)
+
+    left, right = st.columns(2)
+    with left:
+        if rank_frame is not None and not rank_frame.empty:
+            chart_spec = {
+                "data": {"values": rank_frame.to_dict(orient="records")},
+                "mark": {"type": "bar", "cornerRadiusEnd": 4},
+                "encoding": {
+                    "x": {"field": "rank_label", "type": "nominal", "axis": {"title": None, "labelAngle": 0}},
+                    "y": {"field": "ctr", "type": "quantitative", "axis": {"title": "CTR", "format": "%"}},
+                    "color": {"value": "#805ad5"},
+                    "tooltip": [
+                        {"field": "rank_label", "type": "nominal", "title": "Suggestion"},
+                        {"field": "shown", "type": "quantitative", "title": "Shown"},
+                        {"field": "clicked", "type": "quantitative", "title": "Clicked"},
+                        {"field": "ctr", "type": "quantitative", "title": "CTR", "format": ".1%"},
+                    ],
+                },
+                "height": 240,
+            }
+            st.vega_lite_chart(chart_spec, use_container_width=True)
+        else:
+            st.info("Generate and click suggested follow-ups to populate CTR by rank.")
+
+    with right:
+        if journey_frame is not None and not journey_frame.empty:
+            st.dataframe(journey_frame, use_container_width=True)
+        else:
+            st.info("Clicked follow-ups will appear here as user journey transitions.")
+
+
 def render_key_insights() -> None:
     project_summary = _load_optional_json(PROJECT_SUMMARY_PATH)
     sentiment_summary = _load_optional_json(SENTIMENT_SUMMARY_PATH) if _sentiment_assets_ready() else {}
@@ -421,6 +649,8 @@ def render_analytics_dashboard() -> None:
         return
 
     render_overview_metrics()
+    render_evaluation_results()
+    render_followup_analytics()
     st.divider()
 
     top_left, top_right = st.columns(2)
@@ -543,6 +773,10 @@ st.set_page_config(
 
 if "history" not in st.session_state:
     st.session_state.history = []
+if "session_id" not in st.session_state:
+    st.session_state.session_id = uuid.uuid4().hex
+if "queued_query" not in st.session_state:
+    st.session_state.queued_query = ""
 
 
 with st.sidebar:
@@ -555,6 +789,7 @@ with st.sidebar:
     st.divider()
     if st.button("Clear chat"):
         st.session_state.history = []
+        st.session_state.queued_query = ""
         st.rerun()
 
     st.divider()
@@ -623,12 +858,34 @@ def render_sentiment(payload: dict) -> None:
         st.caption("Note: dataset is heavily neutral-skewed; treat as a supplementary signal.")
 
 
+def render_followup_buttons(turn: dict[str, Any], key_prefix: str) -> None:
+    followups = turn.get("followups") or []
+    if not followups:
+        return
+    st.markdown("**Suggested follow-ups:**")
+    cols = st.columns(min(3, len(followups)))
+    for index, question in enumerate(followups, 1):
+        column = cols[(index - 1) % len(cols)]
+        with column:
+            if st.button(question, key=f"{key_prefix}_followup_{index}", use_container_width=True):
+                log_followup_event(
+                    "clicked",
+                    str(turn.get("turn_id", "")),
+                    str(turn.get("query", "")),
+                    str(question),
+                    index,
+                    str(turn.get("topic", "")),
+                )
+                st.session_state.queued_query = str(question)
+                st.rerun()
+
+
 chatbot_tab, analytics_tab = st.tabs(["Chatbot", "Analytics Dashboard"])
 
 with chatbot_tab:
     messages = st.container()
     with messages:
-        for turn in st.session_state.history:
+        for turn_index, turn in enumerate(st.session_state.history):
             with st.chat_message("user"):
                 st.write(turn["query"])
             with st.chat_message("assistant"):
@@ -638,14 +895,18 @@ with chatbot_tab:
                 if turn.get("sentiment"):
                     render_sentiment(turn["sentiment"])
                 if show_followups and turn.get("followups"):
-                    st.markdown("**Suggested follow-ups:**")
-                    for q in turn["followups"]:
-                        st.markdown(f"- {q}")
+                    turn_id = str(turn.get("turn_id") or f"history_{turn_index}")
+                    render_followup_buttons(turn, f"turn_{turn_id}")
 
-    query = st.chat_input("Ask a startup or entrepreneurship question")
+    typed_query = st.chat_input("Ask a startup or entrepreneurship question")
+    queued_query = str(st.session_state.get("queued_query", "")).strip()
+    query = queued_query or typed_query
+    if queued_query:
+        st.session_state.queued_query = ""
 
     if query and query.strip():
         original_query = query.strip()
+        turn_id = uuid.uuid4().hex
 
         with messages:
             with st.chat_message("user"):
@@ -710,13 +971,27 @@ with chatbot_tab:
             if show_followups and full_answer and not full_answer.startswith("Warning:"):
                 with st.spinner("Generating follow-up questions..."):
                     followups = generate_followups(query, full_answer, model=ollama_model)
+                for rank, followup in enumerate(followups, 1):
+                    log_followup_event(
+                        "shown",
+                        turn_id,
+                        original_query,
+                        followup,
+                        rank,
+                        topic_label,
+                    )
                 if followups:
+                    current_turn = {
+                        "turn_id": turn_id,
+                        "query": original_query,
+                        "topic": topic_label,
+                        "followups": followups,
+                    }
                     with st.chat_message("assistant"):
-                        st.markdown("**Suggested follow-ups:**")
-                        for q in followups:
-                            st.markdown(f"- {q}")
+                        render_followup_buttons(current_turn, f"turn_{turn_id}")
 
         st.session_state.history.append({
+            "turn_id": turn_id,
             "query": original_query,
             "answer": full_answer,
             "topic": topic_label,

@@ -1,0 +1,23 @@
+{
+  "test_query_count": 22,
+  "answer_metric_mode": "generated_answer",
+  "topic_accuracy": 1.0,
+  "topic_weighted_f1": 1.0,
+  "source_recall_at_1": 1.0,
+  "source_recall_at_3": 1.0,
+  "source_recall_at_5": 1.0,
+  "relevant_recall_at_1": 0.8333,
+  "relevant_recall_at_3": 0.9444,
+  "relevant_recall_at_5": 0.9444,
+  "source_mrr": 1.0,
+  "relevant_mrr": 0.8889,
+  "relevant_ndcg_at_5": 0.9034,
+  "rouge_1": 0.1446,
+  "rouge_2": 0.0406,
+  "rouge_l": 0.1104,
+  "avg_latency_ms": 605.32,
+  "answer_mode_counts": {
+    "generated_answer": 22
+  },
+  "generated_at": "2026-04-25 13:57:31"
+}
