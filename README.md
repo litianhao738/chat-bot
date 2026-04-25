@@ -109,7 +109,7 @@ ollama --version
 If `ollama` is not recognized, find your `ollama.exe` and set `OLLAMA_PATH` manually for the current CMD session. Replace the sample path if your installation folder is different:
 
 ```cmd
-set OLLAMA_PATH=C:\Users\%USERNAME%\AppData\Local\Programs\Ollama\ollama.exe
+set OLLAMA_PATH=%LOCALAPPDATA%\Programs\Ollama\ollama.exe
 "%OLLAMA_PATH%" --version
 ```
 
@@ -143,7 +143,7 @@ If you set `OLLAMA_PATH`, use:
 "%OLLAMA_PATH%" serve
 ```
 
-Open another CMD window in the project folder, then download the default model:
+Open another CMD window in the project folder, then download the default model. If `ollama` is not on PATH in the new CMD window, set `OLLAMA_PATH` there again first:
 
 ```cmd
 ollama pull qwen2.5:3b
@@ -463,7 +463,7 @@ ollama serve
 If `ollama` is not recognized in CMD, set `OLLAMA_PATH` and run Ollama through the full path:
 
 ```cmd
-set OLLAMA_PATH=C:\Users\%USERNAME%\AppData\Local\Programs\Ollama\ollama.exe
+set OLLAMA_PATH=%LOCALAPPDATA%\Programs\Ollama\ollama.exe
 "%OLLAMA_PATH%" list
 "%OLLAMA_PATH%" serve
 ```
