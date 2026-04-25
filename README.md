@@ -80,17 +80,56 @@ Main dependencies:
 
 Ollama is used for local answer generation and follow-up question generation.
 
-Install with Winget:
+This project expects the Ollama server to be reachable on your machine. The default local model is:
+
+```text
+qwen2.5:3b
+```
+
+### 4.1 Download and Install Ollama
+
+Official Windows download page:
+
+```text
+https://ollama.com/download/windows
+```
+
+You can also install Ollama with Winget:
 
 ```cmd
 winget install Ollama.Ollama
 ```
 
-Or download it from:
+After installation, check whether CMD can find `ollama`:
+
+```cmd
+ollama --version
+```
+
+If `ollama` is not recognized, find your `ollama.exe` and set `OLLAMA_PATH` manually for the current CMD session. Replace the sample path if your installation folder is different:
+
+```cmd
+set OLLAMA_PATH=C:\Users\%USERNAME%\AppData\Local\Programs\Ollama\ollama.exe
+"%OLLAMA_PATH%" --version
+```
+
+Example from the current Windows machine:
 
 ```text
-https://ollama.com/download/windows
+C:\Users\litia\AppData\Local\Programs\Ollama\ollama.exe
 ```
+
+### 4.2 Optional: Set a Custom Model Folder
+
+If your Ollama models are stored in a custom folder, set `OLLAMA_MODELS` before pulling or running models:
+
+```cmd
+set OLLAMA_MODELS=D:\ollama\models
+```
+
+If you use Ollama's default model folder, you can skip this step.
+
+### 4.3 Start Ollama and Download the Model
 
 Start Ollama if it is not already running:
 
@@ -98,10 +137,22 @@ Start Ollama if it is not already running:
 ollama serve
 ```
 
-Download the default model:
+If you set `OLLAMA_PATH`, use:
+
+```cmd
+"%OLLAMA_PATH%" serve
+```
+
+Open another CMD window in the project folder, then download the default model:
 
 ```cmd
 ollama pull qwen2.5:3b
+```
+
+Or, if using `OLLAMA_PATH`:
+
+```cmd
+"%OLLAMA_PATH%" pull qwen2.5:3b
 ```
 
 Check that the model is available:
@@ -110,19 +161,33 @@ Check that the model is available:
 ollama list
 ```
 
-Check the local Ollama API:
+Or:
+
+```cmd
+"%OLLAMA_PATH%" list
+```
+
+Finally, check the local Ollama API:
 
 ```cmd
 curl http://localhost:11434/api/tags
 ```
 
-Optional: use another model by setting `OLLAMA_MODEL` before running the app:
+### 4.4 Optional: Use a Different Ollama Model
+
+Use another model by setting `OLLAMA_MODEL` before running the app:
 
 ```cmd
 set OLLAMA_MODEL=qwen2.5:3b
 ```
 
 The model name can also be changed in the Streamlit sidebar.
+
+Important notes:
+
+- `qwen2.5:3b` is the default local model used by this branch.
+- `set` commands only apply to the current CMD session. If you open a new terminal, set them again.
+- The Streamlit app talks to the local Ollama API. Make sure `ollama serve` is running before asking chatbot questions that require generated answers.
 
 ## 5. Run the Chatbot
 
@@ -384,6 +449,7 @@ python -m pip install -r requirements.txt
 Check:
 
 ```cmd
+ollama --version
 ollama list
 curl http://localhost:11434/api/tags
 ```
@@ -394,10 +460,24 @@ If needed:
 ollama serve
 ```
 
+If `ollama` is not recognized in CMD, set `OLLAMA_PATH` and run Ollama through the full path:
+
+```cmd
+set OLLAMA_PATH=C:\Users\%USERNAME%\AppData\Local\Programs\Ollama\ollama.exe
+"%OLLAMA_PATH%" list
+"%OLLAMA_PATH%" serve
+```
+
 ### Model Is Missing
 
 ```cmd
 ollama pull qwen2.5:3b
+```
+
+Or:
+
+```cmd
+"%OLLAMA_PATH%" pull qwen2.5:3b
 ```
 
 ### ChromaDB Index Is Missing
