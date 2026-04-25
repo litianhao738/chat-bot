@@ -2,7 +2,7 @@
 
 ARIN 7102 Project 8: Online Entrepreneurship Education Chatbot.
 
-This branch, `final-chat-bot`, is the evaluation-ready version of the project. It includes:
+This branch, `final-chat-bot`, is the final demo version of the project. It includes:
 
 - a YC startup knowledge base
 - Hong Kong Companies Registry official guidance
@@ -11,14 +11,7 @@ This branch, `final-chat-bot`, is the evaluation-ready version of the project. I
 - dense retrieval with ChromaDB and `sentence-transformers`
 - local answer generation through Ollama
 - follow-up question prediction
-- Streamlit chatbot and analytics dashboard
-- Objective 1-6 evaluation evidence and documentation
-
-Detailed objective evidence is documented here:
-
-```text
-docs/OBJECTIVES_1_6_IMPLEMENTATION.md
-```
+- a Streamlit chatbot and analytics dashboard
 
 ## 1. System Requirements
 
@@ -28,8 +21,6 @@ Recommended environment:
 - Python 3.11+
 - CMD terminal
 - Ollama for local LLM generation
-
-The project has also been tested with newer Python versions in the local development environment.
 
 ## 2. Clone the Repository
 
@@ -65,19 +56,13 @@ Upgrade `pip`:
 python -m pip install --upgrade pip
 ```
 
-Install Python packages:
+Install project packages:
 
 ```cmd
 python -m pip install -r requirements.txt
 ```
 
-Current runtime dependencies are listed in:
-
-```text
-requirements.txt
-```
-
-Main packages:
+Main dependencies:
 
 - `streamlit`
 - `chromadb`
@@ -91,45 +76,31 @@ Main packages:
 
 Ollama is used for local answer generation and follow-up question generation.
 
-### Option A: Install with Winget
+Install with Winget:
 
 ```cmd
 winget install Ollama.Ollama
 ```
 
-### Option B: Install from the Official Website
-
-Download Ollama for Windows:
+Or download it from:
 
 ```text
 https://ollama.com/download/windows
 ```
 
-### Start Ollama
-
-Usually Ollama starts automatically after installation. If needed, run:
+Start Ollama if it is not already running:
 
 ```cmd
 ollama serve
 ```
 
-Keep that terminal open if Ollama is not running as a background service.
-
-### Pull the Model
-
-The default model used by this project is:
-
-```text
-qwen2.5:3b
-```
-
-Download it:
+Download the default model:
 
 ```cmd
 ollama pull qwen2.5:3b
 ```
 
-Check that Ollama can see the model:
+Check that the model is available:
 
 ```cmd
 ollama list
@@ -141,13 +112,13 @@ Check the local Ollama API:
 curl http://localhost:11434/api/tags
 ```
 
-Optional: use a different Ollama model by setting `OLLAMA_MODEL` before running the app:
+Optional: use another model by setting `OLLAMA_MODEL` before running the app:
 
 ```cmd
 set OLLAMA_MODEL=qwen2.5:3b
 ```
 
-The app also lets you change the model name in the Streamlit sidebar.
+The model name can also be changed in the Streamlit sidebar.
 
 ## 5. Run the Chatbot
 
@@ -190,8 +161,6 @@ http://localhost:8501
 
 ## 6. Demo Questions
 
-Use these questions to show the main functions.
-
 ### Hong Kong Official Guidance
 
 ```text
@@ -224,7 +193,7 @@ What are people saying on Twitter and Instagram in the sentiment dataset?
 Which hashtags are associated with positive social media sentiment?
 ```
 
-### Suggested Presentation Flow
+Suggested demo flow:
 
 1. Ask a Hong Kong registration question.
 2. Ask a business planning question.
@@ -233,114 +202,7 @@ Which hashtags are associated with positive social media sentiment?
 5. Click one suggested follow-up question.
 6. Open the Analytics Dashboard tab.
 
-This demonstrates source routing, retrieval, answer generation, sentiment analytics, follow-up prediction, and dashboard evidence.
-
-## 7. Run Objective Evaluation
-
-Evaluation assets are stored in:
-
-```text
-evaluation/
-data/evaluation/
-data/analytics/
-```
-
-### Objective 2-4 Offline Evaluation
-
-Run:
-
-```cmd
-python evaluation\run_evaluation.py
-```
-
-This generates:
-
-```text
-data/evaluation/summary.json
-data/evaluation/evaluation_results.csv
-data/evaluation/classification_report.csv
-data/evaluation/confusion_matrix.csv
-data/evaluation/topk_retrieval_samples.csv
-```
-
-### Objective 4 Generated-Answer Evaluation
-
-Make sure Ollama is running, then run:
-
-```cmd
-evaluation\run_objective4.cmd
-```
-
-This calls:
-
-```cmd
-python evaluation\run_evaluation.py --with-generation
-```
-
-Latest generated-answer metrics include:
-
-```text
-Generated answers: 22/22
-ROUGE-1: 0.1446
-ROUGE-2: 0.0406
-ROUGE-L: 0.1104
-Relevant Recall@5: 94.44%
-Relevant MRR: 0.8889
-```
-
-### Objective 5 Follow-Up Analytics
-
-First interact with the app:
-
-1. Ask a question.
-2. Wait for suggested follow-ups.
-3. Click one or more follow-up buttons.
-
-Then run:
-
-```cmd
-evaluation\run_objective5.cmd
-```
-
-This generates or refreshes:
-
-```text
-data/analytics/followup_summary.json
-data/analytics/followup_journeys.csv
-```
-
-The runtime event log is:
-
-```text
-data/analytics/followup_events.jsonl
-```
-
-Current example evidence:
-
-```text
-Suggestions shown: 15
-Suggestions clicked: 3
-Follow-up CTR: 20.0%
-```
-
-## 8. Objective 1-6 Evidence Map
-
-| Objective | Evidence Location |
-| --- | --- |
-| Objective 1: Knowledge Base and Keyword Extraction | `data/kb/`, `data/sentiment/`, `global_keywords.csv`, `company_keywords.csv` |
-| Objective 2: Topic Classification | `evaluation/test_queries.csv`, `data/evaluation/classification_report.csv`, `data/evaluation/confusion_matrix.csv` |
-| Objective 3: Retrieval and Ranking | `data/evaluation/summary.json`, `data/evaluation/topk_retrieval_samples.csv` |
-| Objective 4: Answer Summarization | `evaluation/run_objective4.cmd`, `data/evaluation/evaluation_results.csv` |
-| Objective 5: Follow-Up Prediction | `data/analytics/followup_events.jsonl`, `followup_summary.json`, `followup_journeys.csv` |
-| Objective 6: Dashboard and Analytics | `app.py`, Analytics Dashboard tab |
-
-Full explanation:
-
-```text
-docs/OBJECTIVES_1_6_IMPLEMENTATION.md
-```
-
-## 9. Folder and File Guide
+## 7. Folder and File Guide
 
 ### Root Files
 
@@ -351,11 +213,11 @@ docs/OBJECTIVES_1_6_IMPLEMENTATION.md
 | `requirements.txt` | Python runtime dependencies |
 | `run.bat` | CMD startup helper for Windows |
 | `FIX_REPORT.md` | Change log and implementation notes |
-| `README.md` | This setup and usage guide |
+| `README.md` | Setup and usage guide |
 
 ### `builders/`
 
-Scripts that build processed knowledge-base files from raw or external source data.
+Builds processed knowledge-base files from raw or external data.
 
 Important files:
 
@@ -378,12 +240,11 @@ rag/retrieve.py
 rag/generate.py
 ```
 
-Roles:
+Main roles:
 
-- build ChromaDB index
+- build the ChromaDB index
 - detect query intent
-- retrieve Top-K chunks
-- rerank retrieved evidence
+- retrieve and rerank chunks
 - build prompts
 - stream answers from Ollama
 - generate follow-up questions
@@ -400,12 +261,12 @@ sentiment/engine.py
 sentiment/input/sentimentdataset.csv
 ```
 
-Roles:
+Main roles:
 
 - clean the social media dataset
-- calculate sentiment summaries
+- build sentiment summaries
 - build keyword profiles
-- provide the Sentiment Lens in the app
+- power the app's Sentiment Lens
 
 ### `scrapers/`
 
@@ -418,6 +279,17 @@ scrapers/yc_scraper.py
 scrapers/yc_deep_scraper.py
 scrapers/yc_page_extract.py
 scrapers/repair_descriptions.py
+```
+
+### `external_sources/`
+
+Processed summaries for external Hong Kong official and business guide sources.
+
+Important files:
+
+```text
+external_sources/processed/hk_official_kb_summary.json
+external_sources/processed/business_guide_kb_summary.json
 ```
 
 ### `data/kb/`
@@ -459,23 +331,9 @@ data/sentiment/sentiment_summary.json
 data/sentiment/sentiment_keyword_profiles.json
 ```
 
-### `data/evaluation/`
-
-Offline evaluation results for Objectives 2-4.
-
-Important files:
-
-```text
-data/evaluation/summary.json
-data/evaluation/classification_report.csv
-data/evaluation/confusion_matrix.csv
-data/evaluation/evaluation_results.csv
-data/evaluation/topk_retrieval_samples.csv
-```
-
 ### `data/analytics/`
 
-Runtime analytics for Objective 5 follow-up prediction.
+Runtime analytics generated from follow-up suggestion interactions.
 
 Important files:
 
@@ -485,33 +343,9 @@ data/analytics/followup_summary.json
 data/analytics/followup_journeys.csv
 ```
 
-### `evaluation/`
+## 8. Troubleshooting
 
-Evaluation scripts and CMD helpers.
-
-Important files:
-
-```text
-evaluation/test_queries.csv
-evaluation/run_evaluation.py
-evaluation/run_objective4.cmd
-evaluation/summarize_followups.py
-evaluation/run_objective5.cmd
-```
-
-### `docs/`
-
-Project documentation.
-
-Important file:
-
-```text
-docs/OBJECTIVES_1_6_IMPLEMENTATION.md
-```
-
-## 10. Troubleshooting
-
-### Streamlit Is Missing
+### Streamlit or Dependencies Are Missing
 
 ```cmd
 python -m pip install -r requirements.txt
@@ -548,41 +382,4 @@ Or rebuild from scratch:
 
 ```cmd
 python rag\build_index.py --reset
-```
-
-### Objective 4 Evaluation Gives Fallback Results
-
-That means Ollama was not reachable or generation failed.
-
-Start Ollama and rerun:
-
-```cmd
-evaluation\run_objective4.cmd
-```
-
-### Objective 5 CTR Is Zero
-
-CTR is based on real clicks. Ask a question in the app, click suggested follow-ups, then rerun:
-
-```cmd
-evaluation\run_objective5.cmd
-```
-
-## 11. Current Status
-
-All six objectives are implemented or have an implemented measurement path:
-
-| Objective | Status |
-| --- | --- |
-| Objective 1 | Implemented with KB and keyword data |
-| Objective 2 | Implemented with classification report and confusion matrix |
-| Objective 3 | Implemented with Recall@K, MRR, NDCG, and Top-K samples |
-| Objective 4 | Implemented with generated-answer ROUGE-style evaluation |
-| Objective 5 | Implemented with clickable follow-ups and CTR logging |
-| Objective 6 | Implemented in the Streamlit Analytics Dashboard |
-
-The most detailed evidence is in:
-
-```text
-docs/OBJECTIVES_1_6_IMPLEMENTATION.md
 ```
